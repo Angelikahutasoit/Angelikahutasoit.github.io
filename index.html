@@ -3,6 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Animasi Bergerak</title>
+    <style>
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <!-- Letakkan script di sini, sebelum </body> -->
+    <script>
+        let position = 0;
+        function moveBox() {
+            position += 5;
+            document.getElementById("box").style.left = position + "px";
+            if (position < window.innerWidth - 50) {
+                requestAnimationFrame(moveBox);
+            }
+        }
+        moveBox();
+    </script>
+</body>
+</html>
     <title>My GitHub Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
