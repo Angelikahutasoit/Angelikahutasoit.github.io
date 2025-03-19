@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Angelika</title>
+    <title>Hubungi Kami</title>
+
+    <!-- Tambahkan Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
             background-color: #064635; /* Hijau Gelap */
             color: white;
             font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
             padding: 0;
-            position: relative;
-            overflow: hidden;
         }
 
         header {
@@ -22,79 +23,78 @@
             text-align: center;
         }
 
-        .menu {
-            list-style: none;
-            padding: 0;
-        }
-
-        .menu li {
-            display: inline;
-            margin: 0 15px;
-        }
-
         .menu a {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
+        .contact-container {
+            display: flex;
+            justify-content: center; /* Form tetap di tengah */
+            align-items: center;
+            min-height: 80vh;
         }
 
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Animasi buku */
-        .animated-book {
-            font-size: 50px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+        .contact-form {
+            background: white;
+            color: black;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navbar Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Perpustakaan Online</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <main>
-        <h1>Selamat Datang di Perpustakaan Online Angelika</h1>
-        <p>📚 Perpustakaan Digital Angelika – Dunia Pengetahuan dalam Genggaman! 📚✨</p>
-        <p>Akses buku di mana saja. Mari jelajahi ilmu tanpa batas!</p>
+    <main class="contact-container">
+        <section class="contact-form">
+            <h2 class="text-center">Hubungi Kami</h2>
+            <p class="text-center">Silakan isi formulir di bawah ini untuk menghubungi kami.</p>
+            <form id="contactForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nama:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
 
-        <!-- Sejarah Singkat Perpustakaan USU -->
-        <h2>📖 Sejarah Singkat Perpustakaan USU</h2>
-        <p>Perpustakaan Universitas Sumatera Utara (USU) memulai perjalanannya dengan berdirinya Perpustakaan Fakultas Kedokteran pada tahun 1952, diikuti oleh Perpustakaan Fakultas Hukum pada tahun 1954. Pada tahun 1970, perpustakaan ini berkembang menjadi perpustakaan sentral, menggabungkan berbagai perpustakaan fakultas, dan menempati gedung baru yang diresmikan pada 2 November 1987 oleh Menteri Pendidikan dan Kebudayaan saat itu. </p>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-Mail:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
 
-        <!-- Pencapaian Terbaru Perpustakaan USU -->
-        <h2>🏆 Pencapaian Terbaru Perpustakaan USU</h2>
-        <p>Pada perayaan Dies Natalis ke-36, Perpustakaan USU mengadakan lomba infografis untuk mahasiswa, mendorong kreativitas dan partisipasi aktif dalam memanfaatkan perpustakaan. </p>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Pesan:</label>
+                    <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                </div>
 
-        <p>Klik tombol di bawah untuk mengunjungi Perpustakaan USU:</p>
-        <a href="https://library.usu.ac.id/" target="_blank" class="btn">
-            Kunjungi Perpustakaan USU
-        </a>
+                <button type="submit" class="btn btn-primary w-100">Kirim</button>
+            </form>
+            <p id="responseMessage" class="text-center mt-3"></p>
+        </section>
     </main>
 
-    <!-- Animasi buku -->
-    <div class="animated-book" id="book">📖</div>
+    <!-- Tambahkan Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
 
