@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             position: relative;
+            overflow: hidden;
         }
 
         header {
@@ -53,10 +54,7 @@
 
         /* Buku yang mengikuti kursor */
         #cursor-book {
-            width: 40px;
-            height: 40px;
-            background-image: url('book.png'); /* Tambahkan gambar buku */
-            background-size: cover;
+            font-size: 30px;
             position: absolute;
             pointer-events: none;
             transition: transform 0.1s ease-out;
@@ -64,32 +62,18 @@
 
         /* Animasi buku di sudut */
         .corner-book {
-            width: 60px;
-            height: 60px;
-            background-image: url('book.png');
-            background-size: cover;
+            font-size: 40px;
             position: absolute;
-            animation: moveBook 3s infinite alternate ease-in-out;
         }
 
         .left {
-            bottom: 10px;
-            left: 10px;
+            bottom: 20px;
+            left: 20px;
         }
 
         .right {
-            top: 10px;
-            right: 10px;
-        }
-
-        /* Animasi bergerak */
-        @keyframes moveBook {
-            from {
-                transform: translateY(0);
-            }
-            to {
-                transform: translateY(15px);
-            }
+            top: 20px;
+            right: 20px;
         }
     </style>
 </head>
@@ -118,11 +102,11 @@
     </main>
 
     <!-- Buku yang mengikuti kursor -->
-    <div id="cursor-book"></div>
+    <div id="cursor-book">📖</div>
 
     <!-- Buku bergerak di sudut -->
-    <div class="corner-book left"></div>
-    <div class="corner-book right"></div>
+    <div class="corner-book left" id="left-book">📖</div>
+    <div class="corner-book right" id="right-book">📖</div>
 
     <script src="script.js"></script>
 
