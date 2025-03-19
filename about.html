@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>Tentang Kami | Perpustakaan Angelika</title>
 
-    <!-- Tambahkan Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -13,11 +13,66 @@
             background-color: #064635; /* Hijau Gelap */
             color: white;
             font-family: Arial, sans-serif;
+            text-align: center;
             margin: 0;
             padding: 0;
         }
 
+        .navbar {
+            background-color: #1B9C85; /* Hijau Lebih Terang */
+        }
+
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        .container {
+            margin-top: 40px;
+        }
+
+        table {
+            width: 60%;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            color: black;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8b400;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f4f4f4;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0073e6;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Pop-up */
         .popup {
+            display: none;
             position: fixed;
             top: 50%;
             left: 50%;
@@ -26,33 +81,45 @@
             color: black;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
             text-align: center;
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translate(-50%, -60%); }
-            to { opacity: 1; transform: translate(-50%, -50%); }
+            z-index: 1000;
         }
 
         .popup button {
+            background-color: #1B9C85;
+            color: white;
+            border: none;
+            padding: 10px 15px;
             margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
         }
 
-        .biodata {
+        .popup button:hover {
+            background-color: #157a67;
+        }
+
+        /* Overlay (background gelap saat pop-up muncul) */
+        .overlay {
             display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
         }
     </style>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Perpustakaan Online</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="index.html">Perpustakaan Angelika</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -66,13 +133,14 @@
         </div>
     </nav>
 
-    <main class="container mt-5">
-        <h2 class="text-center">Tentang Kami</h2>
-        <p class="text-center">Kami adalah perpustakaan digital yang menyediakan akses ke berbagai buku dan sumber pengetahuan.</p>
+    <!-- Konten -->
+    <div class="container">
+        <h2>Tentang Kami</h2>
+        <p>📚 Perpustakaan Angelika adalah platform digital yang menyediakan akses ke berbagai koleksi buku, jurnal, dan referensi akademik secara online. 📖✨</p>
 
-        <!-- Biodata (Disembunyikan) -->
-        <div class="biodata mt-4">
-            <table class="table table-light table-bordered">
+        <!-- Tabel Informasi -->
+        <div id="profile" style="display: none;">
+            <table class="table table-bordered mt-4">
                 <tr>
                     <th>Informasi</th>
                     <th>Detail</th>
@@ -86,8 +154,8 @@
                     <td>angelikaputri934@gmail.com</td>
                 </tr>
                 <tr>
-                    <td>Hobby</td>
-                    <td>Membaca</td>
+                    <td>Hobi</td>
+                    <td>Membaca 📖</td>
                 </tr>
                 <tr>
                     <td>Instagram</td>
@@ -95,17 +163,33 @@
                 </tr>
             </table>
         </div>
-    </main>
-
-    <!-- Pop-up -->
-    <div class="popup" id="popup">
-        <p>Halo! Ingin tahu lebih banyak tentang pembuat web ini?</p>
-        <button class="btn btn-primary" onclick="showBiodata()">Lihat Profil</button>
     </div>
 
-    <!-- Tambahkan Bootstrap JS -->
+    <!-- Pop-up -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="popup" id="popup">
+        <p>Hai👋🏽 Ingin mengetahui lebih banyak tentang pemilik perpustakaan online ini?</p>
+        <button id="showProfileBtn">Klik Profil</button>
+    </div>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+
+    <script>
+        // Tampilkan pop-up setelah 1,5 detik
+        setTimeout(() => {
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }, 1500);
+
+        // Saat tombol diklik, tutup pop-up dan tampilkan profil
+        document.getElementById("showProfileBtn").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("profile").style.display = "block";
+        });
+    </script>
 
 </body>
 </html>
