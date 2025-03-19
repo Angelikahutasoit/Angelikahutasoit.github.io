@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Online</title>
+    <title>Perpustakaan Angelika</title>
 
     <!-- Tambahkan Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,74 +13,142 @@
             background-color: #064635; /* Hijau Gelap */
             color: white;
             font-family: Arial, sans-serif;
+            text-align: center;
             margin: 0;
             padding: 0;
+            position: relative;
+            overflow: hidden;
         }
 
-        .navbar {
-            background-color: #1B9C85 !important; /* Hijau Lebih Terang */
-        }
-
-        .content {
-            padding: 20px;
-            text-align: center;
-        }
-
-        #book {
-            position: absolute;
-            top: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 50px;
-        }
-
-        .footer {
-            background-color: #1B9C85;
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
             color: white;
-            text-align: center;
-            padding: 15px;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
             margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Animasi boneka membaca di pojok kanan bawah */
+        .animated-doll {
+            width: 80px;
+            height: auto;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            animation: floating 3s infinite ease-in-out;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Pop-up di Halaman About */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        #profile {
+            display: none;
         }
     </style>
 </head>
 <body>
 
     <!-- Navbar Bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Perpustakaan Online</a>
+            <a class="navbar-brand" href="index.html">Perpustakaan Angelika</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Buku Animasi Bergerak -->
-    <div id="book">📖</div>
+    <main>
+        <h1>Selamat Datang di Perpustakaan Online Angelika</h1>
+        <p>📚 Perpustakaan Digital Angelika – Dunia Pengetahuan dalam Genggaman! 📚✨</p>
+        <p>Akses buku di mana saja. Mari jelajahi ilmu tanpa batas!</p>
 
-    <!-- Konten Utama -->
-    <main class="content">
-        <h1>Selamat Datang di Perpustakaan Online</h1>
-        <p>Tempat terbaik untuk menemukan berbagai koleksi buku digital.</p>
+        <h2>📖 Sejarah Singkat Perpustakaan USU</h2>
+        <p>Perpustakaan Universitas Sumatera Utara (USU) memulai perjalanannya dengan berdirinya Perpustakaan Fakultas Kedokteran pada tahun 1952, diikuti oleh Perpustakaan Fakultas Hukum pada tahun 1954. Pada tahun 1970, perpustakaan ini berkembang menjadi perpustakaan sentral, menggabungkan berbagai perpustakaan fakultas, dan menempati gedung baru yang diresmikan pada 2 November 1987 oleh Menteri Pendidikan dan Kebudayaan saat itu.</p>
+
+        <h2>🏆 Pencapaian Terbaru Perpustakaan USU</h2>
+        <p>Pada perayaan Dies Natalis ke-36, Perpustakaan USU mengadakan lomba infografis untuk mahasiswa, mendorong kreativitas dan partisipasi aktif dalam memanfaatkan perpustakaan.</p>
+
+        <p>Klik tombol di bawah untuk mengunjungi Perpustakaan USU:</p>
+        <a href="https://library.usu.ac.id/" target="_blank" class="btn">
+            Kunjungi Perpustakaan USU
+        </a>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Perpustakaan Online. All Rights Reserved.</p>
-    </footer>
+    <!-- Animasi boneka membaca di pojok kanan bawah -->
+    <img src="doll-reading.png" alt="Boneka Membaca" class="animated-doll">
+
+    <!-- Pop-up di Halaman About -->
+    <div class="popup" id="popup">
+        <h3>Halo! Ingin tahu lebih banyak tentang pembuat web ini?</h3>
+        <button id="showProfile" class="btn btn-primary">Lihat Profil</button>
+    </div>
+
+    <div id="profile">
+        <h2>Profil Saya</h2>
+        <p>Nama: Angelika</p>
+        <p>Mahasiswa Teknik Informatika</p>
+        <p>Hobi: Membaca dan menulis</p>
+    </div>
 
     <!-- Tambahkan Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Pop-up di Halaman About
+            let popup = document.getElementById("popup");
+            let profile = document.getElementById("profile");
+            let showProfileBtn = document.getElementById("showProfile");
+
+            if (popup && profile && showProfileBtn) {
+                setTimeout(() => {
+                    popup.style.display = "block";
+                }, 1000); // Muncul setelah 1 detik
+
+                showProfileBtn.addEventListener("click", function () {
+                    popup.style.display = "none";
+                    profile.style.display = "block"; // Tampilkan biodata
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
