@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (popup && profile && showProfileBtn) {
         setTimeout(() => {
             popup.style.display = "block";
-        }, 200); // Muncul setelah 1 detik
+        }, 200); // Muncul setelah 0,2 detik
 
         showProfileBtn.addEventListener("click", function () {
             popup.style.display = "none";
