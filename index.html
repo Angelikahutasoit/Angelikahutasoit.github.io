@@ -52,28 +52,12 @@
             background-color: #0056b3;
         }
 
-        /* Buku yang mengikuti kursor */
-        #cursor-book {
-            font-size: 30px;
+        /* Animasi buku */
+        .animated-book {
+            font-size: 50px;
             position: absolute;
-            pointer-events: none;
-            transition: transform 0.1s ease-out;
-        }
-
-        /* Animasi buku di sudut */
-        .corner-book {
-            font-size: 40px;
-            position: absolute;
-        }
-
-        .left {
-            bottom: 20px;
-            left: 20px;
-        }
-
-        .right {
-            top: 20px;
-            right: 20px;
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
@@ -93,7 +77,15 @@
     <main>
         <h1>Selamat Datang di Perpustakaan Online Angelika</h1>
         <p>📚 Perpustakaan Digital Angelika – Dunia Pengetahuan dalam Genggaman! 📚✨</p>
-        <p>Akses buku, di mana saja. Mari jelajahi ilmu tanpa batas!</p>
+        <p>Akses buku di mana saja. Mari jelajahi ilmu tanpa batas!</p>
+
+        <!-- Sejarah Singkat Perpustakaan USU -->
+        <h2>📖 Sejarah Singkat Perpustakaan USU</h2>
+        <p>Perpustakaan Universitas Sumatera Utara (USU) memulai perjalanannya dengan berdirinya Perpustakaan Fakultas Kedokteran pada tahun 1952, diikuti oleh Perpustakaan Fakultas Hukum pada tahun 1954. Pada tahun 1970, perpustakaan ini berkembang menjadi perpustakaan sentral, menggabungkan berbagai perpustakaan fakultas, dan menempati gedung baru yang diresmikan pada 2 November 1987 oleh Menteri Pendidikan dan Kebudayaan saat itu. </p>
+
+        <!-- Pencapaian Terbaru Perpustakaan USU -->
+        <h2>🏆 Pencapaian Terbaru Perpustakaan USU</h2>
+        <p>Pada perayaan Dies Natalis ke-36, Perpustakaan USU mengadakan lomba infografis untuk mahasiswa, mendorong kreativitas dan partisipasi aktif dalam memanfaatkan perpustakaan. </p>
 
         <p>Klik tombol di bawah untuk mengunjungi Perpustakaan USU:</p>
         <a href="https://library.usu.ac.id/" target="_blank" class="btn">
@@ -101,12 +93,8 @@
         </a>
     </main>
 
-    <!-- Buku yang mengikuti kursor -->
-    <div id="cursor-book">📖</div>
-
-    <!-- Buku bergerak di sudut -->
-    <div class="corner-book left" id="left-book">📖</div>
-    <div class="corner-book right" id="right-book">📖</div>
+    <!-- Animasi buku -->
+    <div class="animated-book" id="book">📖</div>
 
     <script src="script.js"></script>
 
