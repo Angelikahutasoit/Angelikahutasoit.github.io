@@ -1,10 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Hubungi Kami</title>
+    <style>
+        body {
+            background-color: #064635; /* Hijau Gelap */
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1B9C85; /* Hijau Lebih Terang */
+            padding: 15px;
+            text-align: center;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .contact-form {
+            background: white;
+            color: black;
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
@@ -19,22 +85,25 @@
         </nav>
     </header>
 
-    <section class="contact-form">
-        <h2>Get in Touch</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
+    <main class="content">
+        <h1>Hubungi Kami</h1>
+        <p>Silakan isi formulir di bawah ini untuk menghubungi kami.</p>
+
+        <form class="contact-form" id="contactForm">
+            <label for="name">Nama:</label>
             <input type="text" id="name" name="name" required>
 
-            <label for="email">E-mail:</label>
+            <label for="email">E-Mail:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="message">Message:</label>
+            <label for="message">Pesan:</label>
             <textarea id="message" name="message" rows="5" required></textarea>
 
-            <button type="submit">Send Message</button>
+            <button type="submit">Kirim</button>
         </form>
+
         <p id="responseMessage"></p>
-    </section>
+    </main>
 
     <script src="script.js"></script>
 
