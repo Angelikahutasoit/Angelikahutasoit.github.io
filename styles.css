@@ -84,3 +84,20 @@ header {
 .contact-form button:hover {
     background-color: #0056b3;
 }
+.train-container {
+    position: fixed;
+    bottom: 20px; /* Supaya di bagian bawah layar */
+    left: -200px; /* Mulai dari luar layar */
+    font-size: 40px; /* Ukuran emoji */
+    white-space: nowrap; /* Biar emoji tetap sejajar */
+    animation: moveTrain 5s linear infinite; /* Animasi jalan terus */
+}
+
+@keyframes moveTrain {
+    0% {
+        left: -200px; /* Mulai dari luar kiri */
+    }
+    100% {
+        left: 100vw; /* Berjalan sampai luar kanan */
+    }
+}
