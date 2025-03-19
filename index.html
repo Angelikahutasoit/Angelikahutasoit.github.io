@@ -1,70 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Animasi Bergerak</title>
-    <style>
-        #box {
-            width: 50px;
-            height: 50px;
-            background-color: red;
-            position: absolute;
-            top: 50px;
-            left: 0;
-        }
-    </style>
-</head>
-<body>
-    <div id="box"></div>
-
-    <!-- Letakkan script di sini, sebelum </body> -->
-    <script>
-        let position = 0;
-        function moveBox() {
-            position += 5;
-            document.getElementById("box").style.left = position + "px";
-            if (position < window.innerWidth - 50) {
-                requestAnimationFrame(moveBox);
-            }
-        }
-        moveBox();
-    </script>
-</body>
-</html>
-    <title>My GitHub Website</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h1>Selamat datang di perpustakaan online Angelika</h1>
-        <b1> Perpustakaan Digital Angelika – Dunia Pengetahuan dalam Genggaman! 📚✨
-         Akses buku, di mana saja. Mari jelajahi ilmu tanpa batas!.</b2></p>
-    </main>
-<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Saya</title>
+    <title>Perpustakaan Angelika</title>
     <style>
-        h1 {
-      text-align: center;
-    }
+        body {
+            background-color: #064635; /* Hijau Gelap */
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        header {
+            background-color: #1B9C85; /* Hijau Lebih Terang */
+            padding: 15px;
+            text-align: center;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
         .btn {
             display: inline-block;
             background-color: #007bff;
@@ -72,23 +44,87 @@
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
+            margin-top: 20px;
         }
 
         .btn:hover {
             background-color: #0056b3;
         }
+
+        /* Buku yang mengikuti kursor */
+        #cursor-book {
+            width: 40px;
+            height: 40px;
+            background-image: url('book.png'); /* Tambahkan gambar buku */
+            background-size: cover;
+            position: absolute;
+            pointer-events: none;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Animasi buku di sudut */
+        .corner-book {
+            width: 60px;
+            height: 60px;
+            background-image: url('book.png');
+            background-size: cover;
+            position: absolute;
+            animation: moveBook 3s infinite alternate ease-in-out;
+        }
+
+        .left {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .right {
+            top: 10px;
+            right: 10px;
+        }
+
+        /* Animasi bergerak */
+        @keyframes moveBook {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(15px);
+            }
+        }
     </style>
 </head>
 <body>
 
-    <p>Klik tombol di bawah untuk mengunjungi Perpustakaan USU:</p>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <a href="https://library.usu.ac.id/" target="_blank" class="btn">
-        Kunjungi Perpustakaan USU
-    </a>
+    <main>
+        <h1>Selamat Datang di Perpustakaan Online Angelika</h1>
+        <p>📚 Perpustakaan Digital Angelika – Dunia Pengetahuan dalam Genggaman! 📚✨</p>
+        <p>Akses buku, di mana saja. Mari jelajahi ilmu tanpa batas!</p>
 
-</body>
-</html>
+        <p>Klik tombol di bawah untuk mengunjungi Perpustakaan USU:</p>
+        <a href="https://library.usu.ac.id/" target="_blank" class="btn">
+            Kunjungi Perpustakaan USU
+        </a>
+    </main>
+
+    <!-- Buku yang mengikuti kursor -->
+    <div id="cursor-book"></div>
+
+    <!-- Buku bergerak di sudut -->
+    <div class="corner-book left"></div>
+    <div class="corner-book right"></div>
+
     <script src="script.js"></script>
+
 </body>
 </html>
