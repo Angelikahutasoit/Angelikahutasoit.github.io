@@ -43,3 +43,34 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+<script>
+    function toggleChatbot() {
+        const chatbot = document.getElementById("chatbot");
+        chatbot.style.display = chatbot.style.display === "none" ? "flex" : "none";
+    }
+
+    function getBotReply(input) {
+        input = input.toLowerCase();
+        if (input.includes("halo") || input.includes("hai")) return "Halo juga! Ada yang bisa aku bantu? 😊";
+        if (input.includes("buku")) return "Kamu cari buku apa nih? Kita punya banyak koleksi seru! 📚";
+        if (input.includes("event")) return "Event terdekat: Seminar Digital Reading tanggal 15 Mei 2025 ya! ✨";
+        if (input.includes("nama") || input.includes("siapa kamu")) return "Aku chatbot perpustakaan Angelika, siap bantu kamu cari ilmu! 🤖💕";
+        if (input.includes("terima kasih")) return "Sama-sama sayangku 😍 Senang bisa bantu!";
+        return "Hmm... aku belum ngerti maksudmu. Coba tanya yang lain ya! 😊💕";
+    }
+
+    function sendMessage() {
+        const userInput = document.getElementById("userInput").value;
+        if(userInput.trim() !== "") {
+            const chatbox = document.getElementById("chatbox");
+            chatbox.innerHTML += `<div class="message user">${userInput}</div>`;
+            document.getElementById("userInput").value = "";
+
+            setTimeout(() => {
+                const reply = getBotReply(userInput);
+                chatbox.innerHTML += `<div class="message bot">${reply}</div>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            }, 500);
+        }
+    }
+</script>
