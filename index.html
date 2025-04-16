@@ -135,51 +135,38 @@
       background-color: #f8f9fa;
     }
 
-    .banner {
+    /* Animasi berkedip */
+    .event-notification {
       position: fixed;
-      top: 0;
-      left: -100%;
-      width: 100%;
+      bottom: 20px;
+      right: 20px;
       background-color: #27ae60;
       color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 1.2rem;
+      padding: 10px 20px;
       font-weight: bold;
-      z-index: 9999;
-      animation: slideIn 3s forwards;
-    }
-
-    @keyframes slideIn {
-      0% {
-        left: -100%;
-      }
-      100% {
-        left: 0;
-      }
-    }
-
-    .banner a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      margin-left: 1rem;
-      background-color: #e67e22;
-      padding: 0.5rem 1rem;
       border-radius: 5px;
+      font-size: 1rem;
+      text-align: center;
+      z-index: 9999;
+      animation: blink 5s infinite;
     }
 
-    .banner a:hover {
-      background-color: #d35400;
+    /* Efek berkedip */
+    @keyframes blink {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="banner">
-    🎉 **Event Coding: Tambah Buku Favoritmu!**  
-    Fork repo kami dan tambahkan buku favoritmu!  
-    <a href="https://github.com/angelikahutasoit/angelikahutasoit.github.io" target="_blank">💻 Mulai Kontribusi Sekarang</a>
+  <!-- Animasi notifikasi event -->
+  <div class="event-notification">
+    Hi! Ada event di sini!
   </div>
 
 </body>
