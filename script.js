@@ -73,4 +73,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 500);
         }
     }
+function toggleEventPopup() {
+    const popup = document.getElementById("event-popup");
+    popup.style.display = popup.style.display === "none" ? "block" : "none";
+}
 </script>
