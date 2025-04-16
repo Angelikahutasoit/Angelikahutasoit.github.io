@@ -10,7 +10,6 @@
 
     <style>
         body {
-            background-color: #064635; /* Hijau Gelap */
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -18,6 +17,23 @@
             padding: 0;
             position: relative;
             overflow: hidden;
+
+            /* Animasi background gradasi bergerak */
+            background: linear-gradient(45deg, #FFB6C1, #FFC0CB, #D8BFD8, #E6E6FA);
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
+        }
+
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .btn {
