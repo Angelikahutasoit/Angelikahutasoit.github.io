@@ -50,23 +50,54 @@
             background-color: #0056b3;
         }
 
-        /* Animasi boneka membaca di pojok kanan bawah */
-        .animated-doll {
-            width: 80px;
-            height: auto;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            animation: floating 3s infinite ease-in-out;
+        /* Navbar Styling */
+        .navbar {
+            background-color: #2C3E50; /* Dark Blue */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        @keyframes floating {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ECF0F1;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ECF0F1;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #3498DB;
+        }
+
+        main {
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        footer a {
+            color: #00f2fe;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Animasi berkedip */
@@ -93,26 +124,12 @@
                 opacity: 0;
             }
         }
-
-        /* Animasi bunga berputar */
-        #flower {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            font-size: 30px;
-            animation: spinFlower 3s linear infinite;
-        }
-
-        @keyframes spinFlower {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body>
 
     <!-- Navbar Bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">Perpustakaan Angelika</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,34 +157,14 @@
         </a>
     </main>
 
-    <!-- Animasi bunga berputar -->
-    <div id="flower">🌻</div>
-
     <!-- Animasi notifikasi event -->
     <div class="event-notification">
         Hi! Ada event di sini!
     </div>
 
-    <!-- Script untuk animasi -->
-    <script>
-        // Menambahkan style langsung di dalam JavaScript untuk bunga berputar
-        let flower = document.getElementById("flower");
-        flower.style.position = "fixed";
-        flower.style.bottom = "100px";
-        flower.style.right = "20px";
-        flower.style.fontSize = "30px";
-        flower.style.animation = "spinFlower 3s linear infinite";
-
-        // Membuat animasi langsung dengan JavaScript untuk event notifikasi
-        let style = document.createElement("style");
-        style.innerHTML = `
-            @keyframes spinFlower {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+    <footer>
+        <p>&copy; 2025 <a href="https://github.com/angelikahutasoit/angelikahutasoit.github.io" target="_blank">Perpustakaan Digital Angelika</a></p>
+    </footer>
 
     <!-- Tambahkan Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
