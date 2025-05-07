@@ -10,7 +10,7 @@
 
     <style>
         body {
-            color: white;
+            color: #f5f1e6; /* Light cream text color */
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
@@ -18,8 +18,8 @@
             position: relative;
             overflow: hidden;
 
-            /* Animasi background gradasi bergerak */
-            background: linear-gradient(45deg, #FFB6C1, #FFC0CB, #D8BFD8, #E6E6FA);
+            /* Animasi background gradasi bergerak dengan warna earth tone */
+            background: linear-gradient(45deg, #5e4b36, #8a715e, #a89078, #c7b299);
             background-size: 400% 400%;
             animation: gradientBackground 15s ease infinite;
         }
@@ -38,37 +38,38 @@
 
         .btn {
             display: inline-block;
-            background-color: #007bff;
+            background-color: #6b8e23; /* Olive green */
             color: white;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             margin-top: 20px;
+            transition: background-color 0.3s;
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #556b2f; /* Darker olive green */
         }
 
         /* Navbar Styling */
         .navbar {
-            background-color: #2C3E50; /* Dark Blue */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #3c2f1a; /* Dark brown */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .navbar-brand {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #ECF0F1;
+            color: #d9c9a3; /* Light tan */
         }
 
         .navbar-nav .nav-link {
-            color: #ECF0F1;
+            color: #d9c9a3; /* Light tan */
             font-weight: bold;
         }
 
         .navbar-nav .nav-link:hover {
-            color: #3498DB;
+            color: #c0a080; /* Medium tan */
         }
 
         main {
@@ -78,6 +79,7 @@
         h1 {
             font-size: 3rem;
             margin-bottom: 20px;
+            color: #f0e6d2; /* Very light tan */
         }
 
         footer {
@@ -85,19 +87,20 @@
             bottom: 10px;
             width: 100%;
             text-align: center;
-            color: #fff;
+            color: #f0e6d2; /* Very light tan */
             font-size: 1rem;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         footer a {
-            color: #00f2fe;
+            color: #d3b17d; /* Medium tan/gold */
             font-weight: 600;
             text-decoration: none;
         }
 
         footer a:hover {
             text-decoration: underline;
+            color: #e6ccb2; /* Lighter tan */
         }
 
         /* Animasi berkedip */
@@ -105,8 +108,8 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #27ae60;
-            color: white;
+            background-color: #4a5d23; /* Dark olive green */
+            color: #f0e6d2; /* Very light tan */
             padding: 10px 20px;
             font-weight: bold;
             border-radius: 5px;
@@ -114,6 +117,7 @@
             text-align: center;
             z-index: 9999;
             animation: blink 5s infinite;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
 
         @keyframes blink {
