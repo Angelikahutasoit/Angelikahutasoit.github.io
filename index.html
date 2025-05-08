@@ -83,13 +83,12 @@
         }
 
         footer {
-            position: fixed;
-            bottom: 10px;
-            width: 100%;
-            text-align: center;
+            background-color: #3c2f1a; /* Dark brown */
             color: #f0e6d2; /* Very light tan */
             font-size: 1rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            padding: 15px 20px;
+            text-align: center;
+            margin-top: 50px;
         }
 
         footer a {
@@ -103,30 +102,23 @@
             color: #e6ccb2; /* Lighter tan */
         }
 
-        /* Animasi berkedip */
-        .event-notification {
+        .language-selector {
             position: fixed;
             bottom: 20px;
-            right: 20px;
-            background-color: #4a5d23; /* Dark olive green */
-            color: #f0e6d2; /* Very light tan */
-            padding: 10px 20px;
-            font-weight: bold;
+            left: 20px;
+            z-index: 999;
+            background-color: #3c2f1a;
+            padding: 10px 15px;
             border-radius: 5px;
-            font-size: 1rem;
-            text-align: center;
-            z-index: 9999;
-            animation: blink 5s infinite;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
 
-        @keyframes blink {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
+        .contact-info {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #f0e6d2;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -135,53 +127,94 @@
     <!-- Navbar Bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Perpustakaan Angelika</a>
+            <a class="navbar-brand" href="index.html" id="navbar-title">Perpustakaan Angelika</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" id="home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" id="about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html" id="projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html" id="contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <main>
-        <h1>Selamat Datang di Perpustakaan Online Angelika</h1>
-        <p>📚 Perpustakaan Digital Angelika – Dunia Pengetahuan dalam Genggaman! 📚✨</p>
-        <p>Akses buku di mana saja. Mari jelajahi ilmu tanpa batas!</p>
+        <h1 id="welcome-message">Selamat Datang di Perpustakaan Online Angelika</h1>
+        <p id="desc">📚 Perpustakaan Digital Angelika – Dunia Pengetahuan dalam Genggaman! 📚✨</p>
+        <p id="access">Akses buku di mana saja. Mari jelajahi ilmu tanpa batas!</p>
 
-        <p>Klik tombol di bawah untuk mengunjungi Perpustakaan USU:</p>
+        <p id="button-text">Klik tombol di bawah untuk mengunjungi Perpustakaan USU:</p>
         <a href="https://library.usu.ac.id/" target="_blank" class="btn">
             Kunjungi Perpustakaan USU
         </a>
+
+        <!-- Contact Information Section -->
+        <div class="contact-info">
+            <h4>Kontak Kami</h4>
+            <p>Email: support@perpustakaanangelika.com</p>
+            <p>Telepon: +62 123 456 789</p>
+            <p>Alamat: Jl. Perpustakaan No. 1, Jakarta, Indonesia</p>
+        </div>
     </main>
 
-    <!-- Animasi notifikasi event -->
-    <div class="event-notification">
-        Hi! Ada event di sini!
-    </div>
-
     <footer>
-        <p>&copy; 2025 <a href="https://github.com/angelikahutasoit/angelikahutasoit.github.io" target="_blank">Perpustakaan Digital Angelika</a></p>
+        <p id="footer-text">&copy; 2025 <a href="https://github.com/angelikahutasoit/angelikahutasoit.github.io" target="_blank">Perpustakaan Digital Angelika</a></p>
     </footer>
 
     <!-- Tambahkan Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Chatbot Toggle Button -->
-<div id="chatbot-toggle" onclick="toggleChatbot()">
-    💬
-</div>
 
-<!-- Chatbot UI -->
-<div id="chatbot" style="display: none;">
-    <div class="chatbox" id="chatbox"></div>
-    <input type="text" id="userInput" placeholder="Ketik pesan Anda..." onkeydown="if(event.key === 'Enter'){sendMessage()}">
-</div>
+    <script>
+        function changeLanguage() {
+            const lang = document.getElementById('language-selector').value;
+            const elements = {
+                'id': {
+                    'navbar-title': 'Perpustakaan Angelika',
+                    'home': 'Home',
+                    'about': 'About',
+                    'projects': 'Projects',
+                    'contact': 'Contact',
+                    'welcome-message': 'Selamat Datang di Perpustakaan Online Angelika',
+                    'desc': '📚 Perpustakaan Digital Angelika – Dunia Pengetahuan dalam Genggaman! 📚✨',
+                    'access': 'Akses buku di mana saja. Mari jelajahi ilmu tanpa batas!',
+                    'button-text': 'Klik tombol di bawah untuk mengunjungi Perpustakaan USU:',
+                    'footer-text': '&copy; 2025 <a href="https://github.com/angelikahutasoit/angelikahutasoit.github.io" target="_blank">Perpustakaan Digital Angelika</a>'
+                },
+                'en': {
+                    'navbar-title': 'Angelika Library',
+                    'home': 'Home',
+                    'about': 'About',
+                    'projects': 'Projects',
+                    'contact': 'Contact',
+                    'welcome-message': 'Welcome to the Angelika Online Library',
+                    'desc': '📚 Angelika Digital Library – Knowledge at Your Fingertips! 📚✨',
+                    'access': 'Access books anywhere. Let\'s explore knowledge without limits!',
+                    'button-text': 'Click the button below to visit USU Library:',
+                    'footer-text': '&copy; 2025 <a href="https://github.com/angelikahutasoit/angelikahutasoit.github.io" target="_blank">Angelika Digital Library</a>'
+                },
+                // Add more languages here...
+            };
+
+            const selectedLang = elements[lang];
+
+            Object.keys(selectedLang).forEach(id => {
+                document.getElementById(id).innerHTML = selectedLang[id];
+            });
+        }
+    </script>
+
+    <!-- Language Selector at the bottom -->
+    <div class="language-selector">
+        <select class="form-select" id="language-selector" onchange="changeLanguage()">
+            <option value="id">Bahasa Indonesia</option>
+            <option value="en">English</option>
+            <!-- Add more languages here -->
+        </select>
+    </div>
 
 </body>
 </html>
