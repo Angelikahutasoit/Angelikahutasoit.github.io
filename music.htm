@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekomendasi Musik - Perpustakaan Angelika</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #f5f1e6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: linear-gradient(45deg, #5e4b36, #8a715e, #a89078, #c7b299);
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
+        }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .navbar {
+            background-color: #3c2f1a;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #d9c9a3;
+        }
+
+        .navbar-nav .nav-link {
+            color: #d9c9a3;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #c0a080;
+        }
+
+        .music-container {
+            min-height: calc(100vh - 200px);
+            padding: 50px 20px;
+        }
+
+        .music-section {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #3c2f1a;
+            padding: 50px 30px;
+            margin: 0 auto;
+            border-radius: 15px;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #3c2f1a;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        h2 {
+            color: #5e4b36;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #c7b299;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #8a715e;
+        }
+
+        .genre-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .genre-btn {
+            padding: 10px 20px;
+            border: 2px solid #5e4b36;
+            background: white;
+            color: #5e4b36;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .genre-btn:hover, .genre-btn.active {
+            background: #5e4b36;
+            color: white;
+        }
+
+        .recommend-btn {
+            background: #6b8e23;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto;
+            transition: all 0.3s;
+        }
+
+        .recommend-btn:hover {
+            background: #556b2f;
+            transform: translateY(-2px);
+        }
+
+        .recommendation {
+            background: #f5f1e6;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 5px solid #5e4b36;
+            display: none;
+        }
+
+        .recommendation.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .song-list {
+            list-style: none;
+            margin-top: 15px;
+            padding: 0;
+        }
+
+        .song-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .song-item:hover {
+            transform: translateX(5px);
+        }
+
+        .song-icon {
+            margin-right: 15px;
+            font-size: 24px;
+        }
+
+        .mood-indicator {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #8a715e;
+            color: white;
+            border-radius: 15px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .spotify-link {
+            color: #1DB954;
+            text-decoration: none;
+            margin-left: auto;
+            padding: 5px 15px;
+            border: 1px solid #1DB954;
+            border-radius: 15px;
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+
+        .spotify-link:hover {
+            background: #1DB954;
+            color: white;
+        }
+
+        footer {
+            background-color: #3c2f1a;
+            color: #f0e6d2;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #d3b17d;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #e6ccb2;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Perpustakaan Angelika</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="music.html">Rekomendasi Musik</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registration.html">Registrasi</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Music Recommendation Section -->
+    <div class="music-container">
+        <div class="music-section">
+            <h1>📚 Rekomendasi Musik Perpustakaan 🎵</h1>
+            <p class="subtitle">Temukan lagu sempurna untuk menemani sesi membaca Anda</p>
+            
+            <div>
+                <h2>Buku yang Sedang Dibaca</h2>
+                <input type="text" id="bookTitle" placeholder="Masukkan judul buku...">
+                
+                <h2>Genre Buku</h2>
+                <div class="genre-buttons">
+                    <button class="genre-btn" data-genre="fiction">Fiksi</button>
+                    <button class="genre-btn" data-genre="mystery">Misteri</button>
+                    <button class="genre-btn" data-genre="romance">Romantis</button>
+                    <button class="genre-btn" data-genre="science">Sains</button>
+                    <button class="genre-btn" data-genre="fantasy">Fantasi</button>
+                    <button class="genre-btn" data-genre="history">Sejarah</button>
+                    <button class="genre-btn" data-genre="poetry">Puisi</button>
+                    <button class="genre-btn" data-genre="philosophy">Filosofi</button>
+                </div>
+                
+                <h2>Suasana Membaca</h2>
+                <select id="readingMood">
+                    <option value="">Pilih suasana...</option>
+                    <option value="focused">Fokus & Konsentrasi</option>
+                    <option value="relaxed">Santai & Nyaman</option>
+                    <option value="energetic">Energik & Semangat</option>
+                    <option value="emotional">Emosional & Mendalam</option>
+                    <option value="adventurous">Petualangan & Eksplorasi</option>
+                </select>
+            </div>
+            
+            <button class="recommend-btn" onclick="getRecommendations()">
+                Dapatkan Rekomendasi Musik
+            </button>
+            
+            <div id="recommendations" class="recommendation">
+                <h3>🎶 Rekomendasi Musik untuk Anda</h3>
+                <p id="recommendationText"></p>
+                <ul class="song-list" id="songList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 <a href="https://github.com/angelikahutasoit/angelikahutasoit.github.io" target="_blank">Perpustakaan Digital Angelika</a></p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Database rekomendasi musik berdasarkan genre dan mood
+        const musicDatabase = {
+            fiction: {
+                focused: [
+                    {title: "Clair de Lune", artist: "Claude Debussy", mood: "Klasik"},
+                    {title: "River Flows in You", artist: "Yiruma", mood: "Piano"},
+                    {title: "Nuvole Bianche", artist: "Ludovico Einaudi", mood: "Instrumental"}
+                ],
+                relaxed: [
+                    {title: "The Night We Met", artist: "Lord Huron", mood: "Indie"},
+                    {title: "Holocene", artist: "Bon Iver", mood: "Folk"},
+                    {title: "Mad World", artist: "Gary Jules", mood: "Alternative"}
+                ],
+                emotional: [
+                    {title: "Hallelujah", artist: "Jeff Buckley", mood: "Soul"},
+                    {title: "The Scientist", artist: "Coldplay", mood: "Rock"},
+                    {title: "Skinny Love", artist: "Bon Iver", mood: "Indie"}
+                ]
+            },
+            mystery: {
+                focused: [
+                    {title: "Lux Aeterna", artist: "Clint Mansell", mood: "Soundtrack"},
+                    {title: "Time", artist: "Hans Zimmer", mood: "Cinematic"},
+                    {title: "Comptine d'un autre été", artist: "Yann Tiersen", mood: "Piano"}
+                ],
+                adventurous: [
+                    {title: "Bom Bom", artist: "Sam and the Womp", mood: "Electronic"},
+                    {title: "Intro", artist: "The xx", mood: "Alternative"},
+                    {title: "Teardrop", artist: "Massive Attack", mood: "Trip-Hop"}
+                ]
+            },
+            romance: {
+                relaxed: [
+                    {title: "La Vie En Rose", artist: "Édith Piaf", mood: "Chanson"},
+                    {title: "At Last", artist: "Etta James", mood: "Jazz"},
+                    {title: "Can't Help Falling in Love", artist: "Elvis Presley", mood: "Classic"}
+                ],
+                emotional: [
+                    {title: "All of Me", artist: "John Legend", mood: "Soul"},
+                    {title: "Perfect", artist: "Ed Sheeran", mood: "Pop"},
+                    {title: "Make You Feel My Love", artist: "Adele", mood: "Ballad"}
+                ]
+            },
+            fantasy: {
+                adventurous: [
+                    {title: "Concerning Hobbits", artist: "Howard Shore", mood: "Soundtrack"},
+                    {title: "Hedwig's Theme", artist: "John Williams", mood: "Orchestral"},
+                    {title: "May It Be", artist: "Enya", mood: "Celtic"}
+                ],
+                energetic: [
+                    {title: "Warriors", artist: "Imagine Dragons", mood: "Rock"},
+                    {title: "Radioactive", artist: "Imagine Dragons", mood: "Alternative"},
+                    {title: "Pompeii", artist: "Bastille", mood: "Indie"}
+                ]
+            },
+            history: {
+                focused: [
+                    {title: "Carmina Burana", artist: "Carl Orff", mood: "Classical"},
+                    {title: "Palladio", artist: "Karl Jenkins", mood: "Neoclassical"},
+                    {title: "Adagio for Strings", artist: "Samuel Barber", mood: "Orchestral"}
+                ],
+                relaxed: [
+                    {title: "Greensleeves", artist: "Traditional", mood: "Medieval"},
+                    {title: "Canon in D", artist: "Pachelbel", mood: "Baroque"},
+                    {title: "Ave Maria", artist: "Schubert", mood: "Classical"}
+                ]
+            },
+            philosophy: {
+                focused: [
+                    {title: "Gymnopédie No.1", artist: "Erik Satie", mood: "Minimalist"},
+                    {title: "Metamorphosis", artist: "Philip Glass", mood: "Modern Classical"},
+                    {title: "Spiegel im Spiegel", artist: "Arvo Pärt", mood: "Ambient"}
+                ],
+                emotional: [
+                    {title: "Mad Rush", artist: "Philip Glass", mood: "Contemporary"},
+                    {title: "Miserere Mei, Deus", artist: "Gregorio Allegri", mood: "Sacred"},
+                    {title: "Adagio in G Minor", artist: "Albinoni", mood: "Baroque"}
+                ]
+            },
+            poetry: {
+                relaxed: [
+                    {title: "Blackbird", artist: "The Beatles", mood: "Folk"},
+                    {title: "Vincent", artist: "Don McLean", mood: "Ballad"},
+                    {title: "Both Sides Now", artist: "Joni Mitchell", mood: "Singer-Songwriter"}
+                ],
+                emotional: [
+                    {title: "The Sound of Silence", artist: "Simon & Garfunkel", mood: "Folk"},
+                    {title: "Suzanne", artist: "Leonard Cohen", mood: "Poetic"},
+                    {title: "Blowin' in the Wind", artist: "Bob Dylan", mood: "Protest"}
+                ]
+            },
+            science: {
+                focused: [
+                    {title: "Clair de Lune", artist: "Claude Debussy", mood: "Classical"},
+                    {title: "Weightless", artist: "Marconi Union", mood: "Ambient"},
+                    {title: "Strobe", artist: "Deadmau5", mood: "Electronic"}
+                ],
+                energetic: [
+                    {title: "The Final Countdown", artist: "Europe", mood: "Rock"},
+                    {title: "Daft Punk - Harder Better Faster", artist: "Daft Punk", mood: "Electronic"},
+                    {title: "Mr. Blue Sky", artist: "Electric Light Orchestra", mood: "Pop Rock"}
+                ]
+            }
+        };
+
+        // Default recommendations untuk genre yang tidak ada di database
+        const defaultRecommendations = {
+            focused: [
+                {title: "Study Music Alpha Waves", artist: "Various Artists", mood: "Ambient"},
+                {title: "Deep Focus", artist: "Various Artists", mood: "Instrumental"},
+                {title: "Library Sounds", artist: "Various Artists", mood: "Atmosphere"}
+            ],
+            relaxed: [
+                {title: "Weightless", artist: "Marconi Union", mood: "Ambient"},
+                {title: "Sunset Lover", artist: "Petit Biscuit", mood: "Electronic"},
+                {title: "Breathe Me", artist: "Sia", mood: "Alternative"}
+            ],
+            energetic: [
+                {title: "Eye of the Tiger", artist: "Survivor", mood: "Rock"},
+                {title: "Can't Stop", artist: "Red Hot Chili Peppers", mood: "Alternative"},
+                {title: "Pump It", artist: "The Black Eyed Peas", mood: "Hip Hop"}
+            ],
+            emotional: [
+                {title: "Fix You", artist: "Coldplay", mood: "Alternative"},
+                {title: "Someone Like You", artist: "Adele", mood: "Ballad"},
+                {title: "Hurt", artist: "Johnny Cash", mood: "Country"}
+            ],
+            adventurous: [
+                {title: "Sail", artist: "AWOLNATION", mood: "Electronic Rock"},
+                {title: "Little Talks", artist: "Of Monsters and Men", mood: "Indie"},
+                {title: "Home", artist: "Edward Sharpe", mood: "Folk"}
+            ]
+        };
+
+        // Event listeners untuk tombol genre
+        document.querySelectorAll('.genre-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.genre-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        function getRecommendations() {
+            const bookTitle = document.getElementById('bookTitle').value;
+            const selectedGenre = document.querySelector('.genre-btn.active');
+            const mood = document.getElementById('readingMood').value;
+            
+            if (!selectedGenre || !mood) {
+                alert('Silakan pilih genre buku dan suasana membaca terlebih dahulu!');
+                return;
+            }
+            
+            const genre = selectedGenre.dataset.genre;
+            const recommendations = musicDatabase[genre]?.[mood] || defaultRecommendations[mood];
+            
+            displayRecommendations(bookTitle, genre, mood, recommendations);
+        }
+
+        function displayRecommendations(bookTitle, genre, mood, songs) {
+            const recommendationDiv = document.getElementById('recommendations');
+            const recommendationText = document.getElementById('recommendationText');
+            const songList = document.getElementById('songList');
+            
+            // Buat teks rekomendasi
+            let text = `Untuk membaca `;
+            if (bookTitle) {
+                text += `"${bookTitle}" `;
+            }
+            text += `(${getGenreIndonesian(genre)}) dengan suasana ${getMoodIndonesian(mood)}, kami merekomendasikan:`;
+            
+            recommendationText.textContent = text;
+            
+            // Clear list lama
+            songList.innerHTML = '';
+            
+            // Tambahkan lagu-lagu
+            songs.forEach(song => {
+                const li = document.createElement('li');
+                li.className = 'song-item';
+                li.innerHTML = `
+                    <span class="song-icon">🎵</span>
+                    <div>
+                        <strong>${song.title}</strong> - ${song.artist}
+                        <span class="mood-indicator">${song.mood}</span>
+                    </div>
+                    <a href="https://open.spotify.com/search/${encodeURIComponent(song.title + ' ' + song.artist)}" 
+                       target="_blank" class="spotify-link">
+                        Spotify
+                    </a>
+                `;
+                songList.appendChild(li);
+            });
+            
+            // Tampilkan rekomendasi
+            recommendationDiv.classList.add('show');
+            
+            // Scroll ke rekomendasi
+            recommendationDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function getGenreIndonesian(genre) {
+            const translations = {
+                fiction: 'Fiksi',
+                mystery: 'Misteri',
+                romance: 'Romantis',
+                science: 'Sains',
+                fantasy: 'Fantasi',
+                history: 'Sejarah',
+                poetry: 'Puisi',
+                philosophy: 'Filosofi'
+            };
+            return translations[genre] || genre;
+        }
+
+        function getMoodIndonesian(mood) {
+            const translations = {
+                focused: 'fokus & konsentrasi',
+                relaxed: 'santai & nyaman',
+                energetic: 'energik & semangat',
+                emotional: 'emosional & mendalam',
+                adventurous: 'petualangan & eksplorasi'
+            };
+            return translations[mood] || mood;
+        }
+    </script>
+</body>
+</html>
