@@ -44,6 +44,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 <script>
+    // Loading screen handler
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        loadingScreen.classList.add('fade-out');
+        setTimeout(function() {
+            loadingScreen.style.display = 'none';
+        }, 500);
+    }, 2000); // Show loading screen for 2 seconds
+});
     function toggleChatbot() {
         const chatbot = document.getElementById("chatbot");
         chatbot.style.display = chatbot.style.display === "none" ? "flex" : "none";
