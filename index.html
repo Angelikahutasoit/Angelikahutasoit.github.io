@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Angelika</title>
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -16,15 +15,13 @@
         }
 
         body {
-            color: #f5f1e6;
-            font-family: Arial, sans-serif;
-            text-align: center;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
             background: linear-gradient(45deg, #5e4b36, #8a715e, #a89078, #c7b299);
             background-size: 400% 400%;
             animation: gradientBackground 15s ease infinite;
+            color: #f5f1e6;
         }
 
         @keyframes gradientBackground {
@@ -33,11 +30,10 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Custom Navbar */
+        /* Navbar */
         .navbar {
-            background-color: rgba(60, 47, 26, 0.9);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
+            background-color: transparent;
+            box-shadow: none;
             padding: 15px 0;
             position: fixed;
             width: 100%;
@@ -55,26 +51,21 @@
         }
 
         .navbar-brand {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
-            color: #d9c9a3;
+            color: #f5f1e6;
             text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
         }
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-item {
-            margin-left: 30px;
+        .navbar-brand:hover {
+            color: #d9c9a3;
         }
 
         .nav-link {
-            color: #d9c9a3;
-            text-decoration: none;
+            color: #f5f1e6;
             font-weight: bold;
             padding: 8px 16px;
             border-radius: 5px;
@@ -86,233 +77,119 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-            z-index: 1002;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: #d9c9a3;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-6px, 6px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-6px, -6px);
-        }
-
-        /* Side Menu (Mobile) */
-        .side-menu {
-            position: fixed;
-            right: -300px;
-            top: 0;
-            width: 300px;
-            height: 100vh;
-            background-color: rgba(60, 47, 26, 0.98);
-            transition: 0.3s;
-            z-index: 1001;
-            padding-top: 80px;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .side-menu.active {
-            right: 0;
-        }
-
-        .side-menu .nav-menu {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .side-menu .nav-item {
-            margin: 20px 0;
-        }
-
-        .side-menu .nav-link {
-            font-size: 1.2rem;
-            padding: 12px 30px;
-        }
-
-        /* Overlay */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none;
-            z-index: 1000;
-        }
-
-        .overlay.active {
-            display: block;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 120px 20px 50px;
-            min-height: 40vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #f0e6d2;
-            animation: fadeInDown 1s ease;
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            color: #f5f1e6;
-            animation: fadeInUp 1s ease 0.3s;
-            animation-fill-mode: both;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Info Card - Smaller Size */
-        .info-card {
-            background-color: rgba(168, 144, 120, 0.9);
-            color: #f5f1e6;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            margin: 50px auto;
-            text-align: left;
-            animation: slideIn 1s ease 0.6s;
-            animation-fill-mode: both;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid rgba(94, 75, 54, 0.3);
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .info-card h2 {
-            color: #f0e6d2;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .info-card p {
-            color: #f5f1e6;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .info-card .btn {
-            background-color: #3c2f1a;
-            color: #f5f1e6;
-            border: none;
-            padding: 10px 24px;
-            font-size: 1rem;
-            border-radius: 8px;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .info-card .btn:hover {
-            background-color: #2d2215;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Minimalist Search Box */
+        /* Search Box */
         .search-container {
-            margin-top: 30px;
-            width: 100%;
-            max-width: 400px;
-            margin: 50px auto;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
         }
 
-        .search-container input[type="text"] {
-            width: 100%;
-            padding: 12px 20px;
+        .search-container input {
+            width: 80%;
+            padding: 12px;
             font-size: 1rem;
-            border: 2px solid #5e4b36;
             border-radius: 25px;
+            border: 2px solid #5e4b36;
             background-color: transparent;
             color: #f5f1e6;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .search-container input[type="text"]:focus {
-            border-color: #d9c9a3;
         }
 
         .search-container button {
-            position: absolute;
-            right: 10px;
-            top: 5px;
-            background-color: transparent;
+            background-color: #5e4b36;
+            color: white;
             border: none;
-            color: #5e4b36;
-            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 25px;
+            margin-left: -5px;
             cursor: pointer;
         }
 
         .search-container button:hover {
-            color: #d9c9a3;
+            background-color: #3c2f1a;
+        }
+
+        /* Info Cards */
+        .info-card {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .info-card-body {
+            padding: 20px;
+        }
+
+        .info-card-body h3 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .info-card-body p {
+            color: #777;
+        }
+
+        .info-card-body .btn {
+            background-color: #5e4b36;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .info-card-body .btn:hover {
+            background-color: #3c2f1a;
         }
 
         /* Footer */
         footer {
-            background-color: #3c2f1a;
-            color: #f0e6d2;
-            padding: 30px 20px;
             text-align: center;
-            margin-top: 80px;
+            padding: 30px 20px;
+            color: #f5f1e6;
+            font-size: 1rem;
         }
 
         footer a {
             color: #d3b17d;
-            font-weight: 600;
             text-decoration: none;
-            transition: color 0.3s;
         }
 
         footer a:hover {
-            text-decoration: underline;
             color: #f0e6d2;
+        }
+
+        /* Hyperlink (USU Library) */
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .link-container a {
+            font-size: 1.5rem;
+            color: #5e4b36;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #f5f1e6;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .link-container a:hover {
+            background-color: #5e4b36;
+            color: #f5f1e6;
         }
 
         /* Mobile Adjustments */
@@ -325,22 +202,12 @@
                 font-size: 1rem;
             }
 
-            .info-card {
-                max-width: 350px;
-                margin: 30px 20px;
-                padding: 25px;
-            }
-
-            .info-card h2 {
-                font-size: 1.3rem;
-            }
-
-            .info-card p {
-                font-size: 0.95rem;
-            }
-
             .search-container {
                 width: 80%;
+            }
+
+            .search-container input {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -348,63 +215,78 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-container">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container navbar-container">
             <a class="navbar-brand" href="index.html">
-                <img src="assets/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
                 Perpustakaan Angelika
             </a>
-            
-            <!-- Desktop Menu -->
-            <ul class="nav-menu">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="music.html">Rekomendasi Musik</a></li>
-                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="registration.html">Registrasi</a></li>
-                <li class="nav-item"><a class="nav-link" href="event.html">Event</a></li>
-            </ul>
-
-            <!-- Hamburger Menu -->
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="music.html">Rekomendasi Musik</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="event.html">Event</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Side Menu -->
-    <div class="side-menu">
-        <ul class="nav-menu">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="music.html">Media</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
-        </ul>
+    <!-- Informal Yet Inviting Text for USU Library -->
+    <div class="container text-center my-5">
+        <p class="lead" style="font-size: 1.2rem; color: #f5f1e6;">
+            Ingin memperluas koleksi literatur Anda? Kunjungi <a href="https://library.usu.ac.id/" target="_blank" class="text-decoration-none" style="color: #5e4b36; font-weight: bold;">Perpustakaan USU</a> dan temukan berbagai koleksi buku digital yang dapat memperkaya pengetahuan Anda.
+        </p>
     </div>
 
-    <!-- Overlay -->
-    <div class="overlay" onclick="toggleMenu()"></div>
+    <!-- Search Box -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Cari buku, genre, atau artikel...">
+        <button onclick="searchBooks()">🔍 Cari</button>
+    </div>
 
-    <!-- Info Card Section -->
-    <section>
-        <div class="container">
-            <div class="info-card">
-                <h2>📖 Informasi Terkini</h2>
-                <p>Dapatkan perkembangan seputar buku, artikel, dan berita yang dapat membantu Anda dalam eksplorasi dunia literatur.</p>
-                <a href="https://library.usu.ac.id/" target="_blank" class="btn">
-                    Lihat Selengkapnya
-                </a>
+    <!-- Link to USU Library -->
+    <div class="link-container">
+        <a href="https://library.usu.ac.id/" target="_blank">Kunjungi Perpustakaan USU</a>
+    </div>
+
+    <!-- Info Cards Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="info-card">
+                    <img src="https://source.unsplash.com/350x200/?library,books" alt="Book Image">
+                    <div class="info-card-body">
+                        <h3>Buku Digital 1</h3>
+                        <p>Deskripsi singkat tentang buku digital pertama yang tersedia di perpustakaan.</p>
+                        <a href="#" class="btn">Lihat Buku</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="info-card">
+                    <img src="https://source.unsplash.com/350x200/?library,books" alt="Book Image">
+                    <div class="info-card-body">
+                        <h3>Buku Digital 2</h3>
+                        <p>Deskripsi singkat tentang buku digital kedua yang tersedia di perpustakaan.</p>
+                        <a href="#" class="btn">Lihat Buku</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="info-card">
+                    <img src="https://source.unsplash.com/350x200/?library,books" alt="Book Image">
+                    <div class="info-card-body">
+                        <h3>Buku Digital 3</h3>
+                        <p>Deskripsi singkat tentang buku digital ketiga yang tersedia di perpustakaan.</p>
+                        <a href="#" class="btn">Lihat Buku</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Search Section -->
-    <div class="search-container">
-        <input type="text" placeholder="Cari Buku, Genre, atau Fitur..." id="searchInput">
-        <button onclick="searchBooks()">🔍</button>
     </div>
 
     <!-- Footer -->
@@ -414,17 +296,6 @@
 
     <!-- JavaScript -->
     <script>
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const sideMenu = document.querySelector('.side-menu');
-            const overlay = document.querySelector('.overlay');
-            
-            hamburger.classList.toggle('active');
-            sideMenu.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-
-        // Simulate search functionality
         function searchBooks() {
             const query = document.getElementById('searchInput').value;
             if (query) {
@@ -433,14 +304,10 @@
                 alert('Masukkan kata kunci untuk pencarian');
             }
         }
-
-        // Close menu when clicking on a link
-        const navLinks = document.querySelectorAll('.side-menu .nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                toggleMenu();
-            });
-        });
     </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
