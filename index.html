@@ -33,7 +33,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Navbar */
+        /* Custom Navbar */
         .navbar {
             background-color: rgba(60, 47, 26, 0.9);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -86,48 +86,81 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* Pencarian di Halaman */
-        .search-container {
-            position: absolute;
-            top: 20%;
-            left: 10%;
-            transform: translateY(0%);
-            width: 250px;
-            z-index: 1;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .search-container input[type="text"] {
-            width: 100%;
-            padding: 12px 20px;
-            font-size: 1rem;
-            border: 2px solid #5e4b36;
-            border-radius: 10px;
-            background-color: rgba(168, 144, 120, 0.9);
-            color: #f5f1e6;
-            transition: all 0.3s;
-        }
-
-        .search-container input[type="text"]:focus {
-            outline: none;
-            border-color: #d9c9a3;
-        }
-
-        .search-container button {
-            position: absolute;
-            top: 0;
-            right: -50px;
-            padding: 12px 18px;
-            background-color: #5e4b36;
-            border: none;
-            border-radius: 10px;
-            color: white;
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
             cursor: pointer;
-            transition: all 0.3s;
+            padding: 5px;
+            z-index: 1002;
         }
 
-        .search-container button:hover {
+        .hamburger span {
+            width: 25px;
+            height: 3px;
             background-color: #d9c9a3;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-6px, -6px);
+        }
+
+        /* Side Menu (Mobile) */
+        .side-menu {
+            position: fixed;
+            right: -300px;
+            top: 0;
+            width: 300px;
+            height: 100vh;
+            background-color: rgba(60, 47, 26, 0.98);
+            transition: 0.3s;
+            z-index: 1001;
+            padding-top: 80px;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .side-menu.active {
+            right: 0;
+        }
+
+        .side-menu .nav-menu {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .side-menu .nav-item {
+            margin: 20px 0;
+        }
+
+        .side-menu .nav-link {
+            font-size: 1.2rem;
+            padding: 12px 30px;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 1000;
+        }
+
+        .overlay.active {
+            display: block;
         }
 
         /* Hero Section */
@@ -164,6 +197,103 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Info Card - Smaller Size */
+        .info-card {
+            background-color: rgba(168, 144, 120, 0.9);
+            color: #f5f1e6;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 50px auto;
+            text-align: left;
+            animation: slideIn 1s ease 0.6s;
+            animation-fill-mode: both;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid rgba(94, 75, 54, 0.3);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .info-card h2 {
+            color: #f0e6d2;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .info-card p {
+            color: #f5f1e6;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .info-card .btn {
+            background-color: #3c2f1a;
+            color: #f5f1e6;
+            border: none;
+            padding: 10px 24px;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .info-card .btn:hover {
+            background-color: #2d2215;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Minimalist Search Box */
+        .search-container {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 400px;
+            margin: 50px auto;
+        }
+
+        .search-container input[type="text"] {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: 2px solid #5e4b36;
+            border-radius: 25px;
+            background-color: transparent;
+            color: #f5f1e6;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-container input[type="text"]:focus {
+            border-color: #d9c9a3;
+        }
+
+        .search-container button {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            background-color: transparent;
+            border: none;
+            color: #5e4b36;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            color: #d9c9a3;
+        }
+
         /* Footer */
         footer {
             background-color: #3c2f1a;
@@ -187,13 +317,30 @@
 
         /* Mobile Adjustments */
         @media (max-width: 768px) {
-            h1 {
+            .hero h1 {
                 font-size: 2rem;
             }
 
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .info-card {
+                max-width: 350px;
+                margin: 30px 20px;
+                padding: 25px;
+            }
+
+            .info-card h2 {
+                font-size: 1.3rem;
+            }
+
+            .info-card p {
+                font-size: 0.95rem;
+            }
+
             .search-container {
-                left: 5%;
-                width: 200px;
+                width: 80%;
             }
         }
     </style>
@@ -203,7 +350,10 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a class="navbar-brand" href="index.html">Perpustakaan Angelika</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                Perpustakaan Angelika
+            </a>
             
             <!-- Desktop Menu -->
             <ul class="nav-menu">
@@ -211,23 +361,51 @@
                 <li class="nav-item"><a class="nav-link" href="music.html">Rekomendasi Musik</a></li>
                 <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="event.html">Event</a></li> <!-- Event link removed from homepage -->
+                <li class="nav-item"><a class="nav-link" href="registration.html">Registrasi</a></li>
+                <li class="nav-item"><a class="nav-link" href="event.html">Event</a></li>
             </ul>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <!-- Pencarian di Halaman -->
-    <div class="search-container">
-        <input type="text" placeholder="Cari Buku..." id="searchInput">
-        <button onclick="searchBook()">🔍</button>
+    <!-- Side Menu -->
+    <div class="side-menu">
+        <ul class="nav-menu">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="music.html">Media</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
+        </ul>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Selamat Datang di Perpustakaan Angelika</h1>
-        <p>Temukan koleksi buku dan informasi terbaru dengan mudah di sini!</p>
+    <!-- Overlay -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- Info Card Section -->
+    <section>
+        <div class="container">
+            <div class="info-card">
+                <h2>📖 Informasi Terkini</h2>
+                <p>Dapatkan perkembangan seputar buku, artikel, dan berita yang dapat membantu Anda dalam eksplorasi dunia literatur.</p>
+                <a href="https://library.usu.ac.id/" target="_blank" class="btn">
+                    Lihat Selengkapnya
+                </a>
+            </div>
+        </div>
     </section>
+
+    <!-- Search Section -->
+    <div class="search-container">
+        <input type="text" placeholder="Cari Buku, Genre, atau Fitur..." id="searchInput">
+        <button onclick="searchBooks()">🔍</button>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -236,14 +414,33 @@
 
     <!-- JavaScript -->
     <script>
-        function searchBook() {
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const sideMenu = document.querySelector('.side-menu');
+            const overlay = document.querySelector('.overlay');
+            
+            hamburger.classList.toggle('active');
+            sideMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        // Simulate search functionality
+        function searchBooks() {
             const query = document.getElementById('searchInput').value;
             if (query) {
-                alert('Mencari buku: ' + query);
+                alert('Mencari: ' + query);
             } else {
                 alert('Masukkan kata kunci untuk pencarian');
             }
         }
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.side-menu .nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
+            });
+        });
     </script>
 </body>
 </html>
