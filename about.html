@@ -1,208 +1,236 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami | Perpustakaan Angelika</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Kami | Perpustakaan Angelika</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <style>
-        /* Background animasi bergerak dengan warna pastel */
-        body {
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(45deg, #FFB6C1, #FFC0CB, #D8BFD8, #E6E6FA);
-            background-size: 400% 400%;
-            animation: gradientBackground 15s ease infinite;
-        }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(45deg, #5e4b36, #8a715e, #a89078, #c7b299);
+      background-size: 400% 400%;
+      animation: gradientBackground 15s ease infinite;
+      color: #f5f1e6;
+      padding-top: 80px;
+    }
 
-        @keyframes gradientBackground {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    @keyframes gradientBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        /* Navbar */
-        .navbar {
-            background-color: #2C3E50; /* Biru Tua Elegan */
-        }
+    .navbar {
+      background-color: transparent;
+      box-shadow: none;
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
 
-        .navbar-brand, .nav-link {
-            color: white !important;
-            font-weight: bold;
-        }
+    .navbar-brand {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #f5f1e6;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: color 0.3s;
+    }
 
-        /* Heading */
-        h2 {
-            margin-top: 20px;
-        }
+    .navbar-brand:hover {
+      color: #d9c9a3;
+    }
 
-        .container {
-            margin-top: 40px;
-        }
+    .nav-link {
+      color: #f5f1e6 !important;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
 
-        /* Tabel dengan tampilan bersih */
-        table {
-            width: 60%;
-            margin: auto;
-            border-collapse: collapse;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            color: black;
-            border-radius: 10px;
-            overflow: hidden;
-        }
+    .nav-link:hover {
+      color: #f0e6d2 !important;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
-        th, td {
-            padding: 12px;
-            border: 1px solid #ddd;
-        }
+    h2 {
+      margin-top: 40px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
 
-        th {
-            background-color: #f8b400;
-            color: white;
-        }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 15px;
+    }
 
-        tr:hover {
-            background-color: #f4f4f4;
-        }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
 
-        a {
-            text-decoration: none;
-            color: #0073e6;
-            font-weight: bold;
-        }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    th {
+      background-color: #5e4b36;
+      color: #fff;
+    }
 
-        /* Pop-up */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            color: black;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            z-index: 1000;
-        }
+    tr:hover {
+      background-color: #f2f2f2;
+    }
 
-        .popup button {
-            background-color: #1B9C85;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+    a {
+      color: #a89078;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-        .popup button:hover {
-            background-color: #157a67;
-        }
+    a:hover {
+      text-decoration: underline;
+      color: #8a715e;
+    }
 
-        /* Overlay (background gelap saat pop-up muncul) */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-    </style>
+    .popup, .overlay {
+      position: fixed;
+      z-index: 9999;
+    }
+
+    .overlay {
+      display: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .popup {
+      display: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      color: #3c2f1a;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 90%;
+      width: 400px;
+    }
+
+    .popup button {
+      background-color: #5e4b36;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .popup button:hover {
+      background-color: #3c2f1a;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Perpustakaan Angelika</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Konten -->
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <h2>Tentang Kami</h2>
-        <p>📚 Perpustakaan Angelika adalah platform digital yang menyediakan akses ke berbagai koleksi buku, jurnal, dan referensi akademik secara online. 📖✨</p>
-
-        <!-- Tabel Informasi -->
-        <div id="profile" style="display: none;">
-            <table class="table table-bordered mt-4">
-                <tr>
-                    <th>Informasi</th>
-                    <th>Detail</th>
-                </tr>
-                <tr>
-                    <td>Nama</td>
-                    <td>Angelika Putri B. Hutasoit</td>
-                </tr>
-                <tr>
-                    <td>E-Mail</td>
-                    <td>angelikaputri934@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>Hobi</td>
-                    <td>Membaca 📖</td>
-                </tr>
-                <tr>
-                    <td>Instagram</td>
-                    <td><a href="https://instagram.com/a.ngelikaputri" target="_blank">@a.ngelikaputri</a></td>
-                </tr>
-            </table>
-        </div>
+      <a class="navbar-brand" href="index.html">LiberAngel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <!-- Pop-up -->
-    <div class="overlay" id="overlay"></div>
+  <!-- Konten -->
+  <div class="container text-center">
+    <h2>Tentang Kami</h2>
+    <p class="mt-3">📚 <strong>Perpustakaan Angelika</strong> adalah platform digital yang menyediakan akses ke berbagai koleksi buku, jurnal, dan referensi akademik secara online. 📖✨</p>
 
-    <div class="popup" id="popup">
-        <p>Hai👋🏽 Ingin mengetahui lebih banyak tentang pemilik perpustakaan online ini?</p>
-        <button id="showProfileBtn">Klik Profil</button>
+    <!-- Tabel Profil -->
+    <div id="profile" style="display: none;">
+      <table class="table mt-4">
+        <tr>
+          <th>Informasi</th>
+          <th>Detail</th>
+        </tr>
+        <tr>
+          <td>Nama</td>
+          <td>Angelika Putri B. Hutasoit</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>angelikaputri934@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Hobi</td>
+          <td>Membaca 📖</td>
+        </tr>
+        <tr>
+          <td>Instagram</td>
+          <td><a href="https://instagram.com/a.ngelikaputri" target="_blank">@a.ngelikaputri</a></td>
+        </tr>
+      </table>
     </div>
+  </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Overlay dan Pop-up -->
+  <div class="overlay" id="overlay"></div>
 
-    <script>
-        // Tampilkan pop-up setelah 1,5 detik
-        setTimeout(() => {
-            document.getElementById("popup").style.display = "block";
-            document.getElementById("overlay").style.display = "block";
-        }, 1500);
+  <div class="popup" id="popup">
+    <p>Hai 👋🏽 Mau kenal lebih dekat sama pemilik perpustakaan ini?</p>
+    <button id="showProfileBtn">✨ Klik Profil</button>
+  </div>
 
-        // Saat tombol diklik, tutup pop-up dan tampilkan profil
-        document.getElementById("showProfileBtn").addEventListener("click", function() {
-            document.getElementById("popup").style.display = "none";
-            document.getElementById("overlay").style.display = "none";
-            document.getElementById("profile").style.display = "block";
-        });
-    </script>
+  <!-- Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    setTimeout(() => {
+      document.getElementById("popup").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+    }, 1500);
 
+    document.getElementById("showProfileBtn").addEventListener("click", function () {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("profile").style.display = "block";
+    });
+  </script>
 </body>
 </html>
-
