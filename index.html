@@ -171,7 +171,7 @@
         }
 
         .link-container a {
-            font-size: 1.2rem; /* Sesuaikan ukuran font untuk kenyamanan membaca */
+            font-size: 1.2rem;
             color: #f5f1e6;
             text-decoration: none;
             padding: 10px 25px;
@@ -222,9 +222,15 @@
             text-decoration: underline;
         }
 
-        .event-container h1 {
-            font-size: 2rem; /* Membuat ukuran font lebih kecil dan nyaman dibaca */
-            margin-bottom: 20px;
+        /* Center the title text */
+        .event-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 30px;
         }
     </style>
 </head>
@@ -329,7 +335,9 @@
     </div>
 
     <!-- Event Perpustakaan -->
-    <h1>Event Perpustakaan Terbaru</h1>
+    <div class="event-title">
+        <h1>Event Perpustakaan Terbaru</h1>
+    </div>
     <div class="event-container">
         <div class="event-item">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYbqgX3UUEFLTdxZ48i1_izwvh170AptYbQ&s" alt="Pameran Buku">
