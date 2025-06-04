@@ -171,10 +171,10 @@
         }
 
         .link-container a {
-            font-size: 1.5rem;
+            font-size: 1.2rem; /* Sesuaikan ukuran font untuk kenyamanan membaca */
             color: #f5f1e6;
             text-decoration: none;
-            padding: 15px 25px;
+            padding: 10px 25px;
             background-color: #5e4b36;
             border-radius: 5px;
             font-weight: bold;
@@ -187,45 +187,13 @@
             color: #f5f1e6;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .search-container {
-                width: 80%;
-            }
-
-            .search-container input {
-                font-size: 0.9rem;
-            }
-
-            .info-card {
-                margin-bottom: 20px;
-            }
-
-            .navbar-container {
-                padding: 0 10px;
-            }
-        }
-
-        .search-container input:focus {
-            outline: none;
-            border-color: #d9c9a3;
-        }
-
-        /* Event Centering */
         .event-container {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px;
             flex-wrap: wrap;
-            min-height: 80vh; /* Menjaga agar container memiliki tinggi yang cukup */
+            min-height: 80vh;
             text-align: center;
         }
 
@@ -252,6 +220,11 @@
 
         .event-item a:hover {
             text-decoration: underline;
+        }
+
+        .event-container h1 {
+            font-size: 2rem; /* Membuat ukuran font lebih kecil dan nyaman dibaca */
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -286,10 +259,10 @@
         </form>
     </div>
 
-   <!-- Hyperlink ke Perpustakaan USU -->
-<div class="link-container">
-    <a href="https://library.usu.ac.id" target="_blank"Buka Perpustakaan USU</a>
-</div>
+    <!-- Hyperlink ke Perpustakaan USU -->
+    <div class="link-container">
+        <a href="https://library.usu.ac.id" target="_blank">Jelajahi Perpustakaan USU</a>
+    </div>
 
     <!-- Rekomendasi Buku - Carousel 3 Buku per Slide -->
     <div class="container my-5">
@@ -319,6 +292,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Slide 2 -->
                 <div class="carousel-item">
                     <div class="row justify-content-center">
