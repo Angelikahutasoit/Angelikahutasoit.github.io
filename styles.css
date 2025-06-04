@@ -309,3 +309,27 @@ header {
     color: #999;
     margin-bottom: 10px;
 }
+.link-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link-container a {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 25px;
+    background-color: #5e4b36;
+    border-radius: 30px;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.link-container a:hover {
+    background-color: #d3b17d;
+    color: #3c2f1a;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
