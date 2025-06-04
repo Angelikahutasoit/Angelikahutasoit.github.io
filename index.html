@@ -217,6 +217,42 @@
             outline: none;
             border-color: #d9c9a3;
         }
+
+        /* Event Centering */
+        .event-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            min-height: 80vh; /* Menjaga agar container memiliki tinggi yang cukup */
+            text-align: center;
+        }
+
+        .event-item {
+            width: 250px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .event-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .event-item a {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .event-item a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -236,6 +272,7 @@
                     <li class="nav-item"><a class="nav-link" href="music.html">Music Recomendation</a></li>
                     <li class="nav-item"><a class="nav-link" href="projects.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
                 </ul>
             </div>
         </div>
@@ -249,131 +286,91 @@
         </form>
     </div>
 
-    <!-- Hyperlink ke Perpustakaan USU -->
-    <div class="link-container">
-        <a href="https://library.usu.ac.id" target="_blank">📚 Buka Perpustakaan USU</a>
-    </div>
-
-<!-- Rekomendasi Buku - Carousel 3 Buku per Slide -->
-<div class="container my-5">
-  <h2 class="text-center text-white mb-4">📚 Rekomendasi Buku</h2>
-  <div id="carouselBuku" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="row justify-content-center">
-          <div class="col-md-4 text-center">
-            <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" class="img-fluid rounded" alt="Laskar Pelangi">
-            <h5 class="mt-2 text-white">Laskar Pelangi</h5>
-            <p>Genre: Fiksi, Inspiratif</p>
-            <a href="https://wongbagoes.files.wordpress.com/2008/04/laskar-pelangi.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-          </div>
-          <div class="col-md-4 text-center">
-            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" class="img-fluid rounded" alt="Bumi Manusia">
-            <h5 class="mt-2 text-white">Bumi Manusia</h5>
-            <p>Genre: Fiksi Sejarah</p>
-            <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-          </div>
-          <div class="col-md-4 text-center">
-            <img src="https://upload.wikimedia.org/wikipedia/id/8/89/Sang_Pemimpi_sampul.jpg" class="img-fluid rounded" alt="Sang Pemimpi">
-            <h5 class="mt-2 text-white">Sang Pemimpi</h5>
-            <p>Genre: Fiksi, Remaja</p>
-            <a href="https://kalteng.kemenag.go.id/file/majalah/1613240702216.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="row justify-content-center">
-          <div class="col-md-4 text-center">
-            <img src="https://images.tokopedia.net/img/cache/700/product-1/2018/9/25/11999564/11999564_79f965ce-eaf6-4aeb-9ef6-6ee18f364b33_600_890.jpg" class="img-fluid rounded" alt="Laut Bercerita">
-            <h5 class="mt-2 text-white">Laut Bercerita</h5>
-            <p>Genre: Fiksi Sosial</p>
-            <a href="https://lib.atim.ac.id/uploaded_files/temporary/DigitalCollection/MTJkZDc3OWFlNzI1NTY0ZGM0NzJhYTQ1ZWRjNDQ5YzRiNWI1NjIxYg==.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-          </div>
-          <div class="col-md-4 text-center">
-            <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/PULANG.jpg" class="img-fluid rounded" alt="Pulang">
-            <h5 class="mt-2 text-white">Pulang</h5>
-            <p>Genre: Fiksi Sejarah</p>
-            <a href="https://pustakapidiejaya.id/uploaded_files/temporary/DigitalCollection/MjEyYzg1NzBhNGZiMjQ2ZGZmMTk1MDRjYjU2ZTMzMTJiYTVjMjY5NA==.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-          </div>
-          <div class="col-md-4 text-center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Soekarno_1966.jpg" class="img-fluid rounded" alt="Biografi Soekarno">
-            <h5 class="mt-2 text-white">Biografi Soekarno</h5>
-            <p>Genre: Biografi, Sejarah</p>
-            <a href="https://sites.google.com/smpn1samarinda.sch.id/perpustakaan-smpn1samarinda/buku-umum/buku-non-fiksi" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tambah slide jika kamu mau yaaa sayangku~ 😘 -->
-
-    </div>
-
-    <!-- Navigasi -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselBuku" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselBuku" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
+   <!-- Hyperlink ke Perpustakaan USU -->
+<div class="link-container">
+    <a href="https://library.usu.ac.id" target="_blank"Buka Perpustakaan USU</a>
 </div>
-   <title>Event Perpustakaan</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .event-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .event-item {
-            width: 250px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-        }
-        .event-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        .event-item a {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-            color: #0066cc;
-            text-decoration: none;
-        }
-        .event-item a:hover {
-            text-decoration: underline;
-        }
-         .link-container {
-            text-align: center;
-    </style>
-</head>
-<body>
 
+    <!-- Rekomendasi Buku - Carousel 3 Buku per Slide -->
+    <div class="container my-5">
+        <h2 class="text-center text-white mb-4">📚 Rekomendasi Buku</h2>
+        <div id="carouselBuku" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" class="img-fluid rounded" alt="Laskar Pelangi">
+                            <h5 class="mt-2 text-white">Laskar Pelangi</h5>
+                            <p>Genre: Fiksi, Inspiratif</p>
+                            <a href="https://wongbagoes.files.wordpress.com/2008/04/laskar-pelangi.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" class="img-fluid rounded" alt="Bumi Manusia">
+                            <h5 class="mt-2 text-white">Bumi Manusia</h5>
+                            <p>Genre: Fiksi Sejarah</p>
+                            <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/id/8/89/Sang_Pemimpi_sampul.jpg" class="img-fluid rounded" alt="Sang Pemimpi">
+                            <h5 class="mt-2 text-white">Sang Pemimpi</h5>
+                            <p>Genre: Fiksi, Remaja</p>
+                            <a href="https://kalteng.kemenag.go.id/file/majalah/1613240702216.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 text-center">
+                            <img src="https://images.tokopedia.net/img/cache/700/product-1/2018/9/25/11999564/11999564_79f965ce-eaf6-4aeb-9ef6-6ee18f364b33_600_890.jpg" class="img-fluid rounded" alt="Laut Bercerita">
+                            <h5 class="mt-2 text-white">Laut Bercerita</h5>
+                            <p>Genre: Fiksi Sosial</p>
+                            <a href="https://lib.atim.ac.id/uploaded_files/temporary/DigitalCollection/MTJkZDc3OWFlNzI1NTY0ZGM0NzJhYTQ1ZWRjNDQ5YzRiNWI1NjIxYg==.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/PULANG.jpg" class="img-fluid rounded" alt="Pulang">
+                            <h5 class="mt-2 text-white">Pulang</h5>
+                            <p>Genre: Fiksi Sejarah</p>
+                            <a href="https://pustakapidiejaya.id/uploaded_files/temporary/DigitalCollection/MjEyYzg1NzBhNGZiMjQ2ZGZmMTk1MDRjYjU2ZTMzMTJiYTVjMjY5NA==.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Soekarno_1966.jpg" class="img-fluid rounded" alt="Biografi Soekarno">
+                            <h5 class="mt-2 text-white">Biografi Soekarno</h5>
+                            <p>Genre: Biografi, Sejarah</p>
+                            <a href="https://sites.google.com/smpn1samarinda.sch.id/perpustakaan-smpn1samarinda/buku-umum/buku-non-fiksi" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigasi -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBuku" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselBuku" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Event Perpustakaan -->
     <h1>Event Perpustakaan Terbaru</h1>
-
     <div class="event-container">
         <div class="event-item">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYbqgX3UUEFLTdxZ48i1_izwvh170AptYbQ&s" alt="Pameran Buku">
-            <a href="https://www.instagram.com/p/DDY0CmtvX1X/?utm_source=ig_web_copy_link"_blank">Pameran Buku</a>
+            <a href="https://www.instagram.com/p/DDY0CmtvX1X/?utm_source=ig_web_copy_link" target="_blank">Pameran Buku</a>
         </div>
         <div class="event-item">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkmXyGOpNNENgcoLsalQcAhFEugXxDNUksA&s" alt="Seminar Nasional">
-            <a href="https://www.instagram.com/p/DJBKaXGyffS/?utm_source=ig_web_copy_link"_blank">Seminar Nasional</a>
+            <a href="https://www.instagram.com/p/DJBKaXGyffS/?utm_source=ig_web_copy_link" target="_blank">Seminar Nasional</a>
         </div>
         <div class="event-item">
             <img src="https://doktor.fst.unair.ac.id/wp-content/uploads/sites/21/2025/04/workshop_puapt-ha-2025.jpeg" alt="Workshop">
             <a href="https://www.instagram.com/p/DJNw9UOzYNc/?igsh=aXB3emxybjQzNXY2" target="_blank">Workshop</a>
         </div>
     </div>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 <a href="https://github.com/angelikahutasoit/angelikahutasoit.github.io" target="_blank">Perpustakaan Digital Angelika</a></p>
@@ -390,30 +387,32 @@
             }
         }
     </script>
-<!-- Cookie Consent Pop-Up -->
-<div id="cookiePopup" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-     background-color: #3c2f1a; color: #fff; padding: 30px; border-radius: 12px; z-index: 9999;
-     max-width: 90%; width: 400px; text-align: center; display: none; box-shadow: 0 0 15px rgba(0,0,0,0.3);">
-    <h5>🍪 Cookie Consent</h5>
-    <p style="margin: 15px 0;">Kami menggunakan cookie untuk meningkatkan pengalaman kamu di situs ini. Lanjutkan jika kamu setuju. 😊</p>
-    <button onclick="acceptCookies()" style="margin-top: 10px; background-color: #d3b17d; color: #3c2f1a; font-weight: bold;
-        border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
-        Oke, Saya Setuju
-    </button>
-</div>
 
-<script>
-    function acceptCookies() {
-        localStorage.setItem("cookieAccepted", "true");
-        document.getElementById("cookiePopup").style.display = "none";
-    }
-
-    window.onload = function() {
-        if (!localStorage.getItem("cookieAccepted")) {
-            document.getElementById("cookiePopup").style.display = "block";
+    <script>
+        function acceptCookies() {
+            localStorage.setItem("cookieAccepted", "true");
+            document.getElementById("cookiePopup").style.display = "none";
         }
-    };
-</script>
+
+        window.onload = function() {
+            if (!localStorage.getItem("cookieAccepted")) {
+                document.getElementById("cookiePopup").style.display = "block";
+            }
+        };
+    </script>
+
+    <!-- Cookie Consent Pop-Up -->
+    <div id="cookiePopup" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+         background-color: #3c2f1a; color: #fff; padding: 30px; border-radius: 12px; z-index: 9999;
+         max-width: 90%; width: 400px; text-align: center; display: none; box-shadow: 0 0 15px rgba(0,0,0,0.3);">
+        <h5>🍪 Cookie Consent</h5>
+        <p style="margin: 15px 0;">Kami menggunakan cookie untuk meningkatkan pengalaman kamu di situs ini. Lanjutkan jika kamu setuju. 😊</p>
+        <button onclick="acceptCookies()" style="margin-top: 10px; background-color: #d3b17d; color: #3c2f1a; font-weight: bold;
+            border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+            Oke, Saya Setuju
+        </button>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
