@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | Angel Library Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Angel Library Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -15,175 +16,123 @@
     }
 
     .container {
-      width: 80%;
-      margin: auto;
-      overflow: hidden;
-      padding: 0 20px;
+      margin-top: 40px;
     }
 
     header {
       background: #35424a;
       color: #ffffff;
-      padding-top: 30px;
-      min-height: 70px;
-      border-bottom: #e8491d 3px solid;
+      padding: 15px 0;
+      border-bottom: 3px solid #e8491d;
     }
 
-    header ul {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      float: right;
-      margin-top: 25px;
-    }
-
-    header li {
-      display: inline;
-      padding: 0 20px;
-    }
-
-    header a {
+    .navbar-brand {
+      font-weight: bold;
       color: #ffffff;
-      text-decoration: none;
+    }
+
+    .nav-link {
+      color: #ffffff !important;
       text-transform: uppercase;
-      font-size: 16px;
+      font-size: 14px;
+      margin-right: 15px;
     }
 
-    header #branding {
-      float: left;
+    .nav-link:hover {
+      color: #e8491d !important;
     }
 
-    header #branding h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    .showcase {
-      min-height: 400px;
-      background: url('https://via.placeholder.com/1500x400?text=Library+Showcase+Animation') no-repeat center center;
-      background-size: cover;
-      text-align: center;
-      color: #4B0082;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .showcase h1 {
-      font-size: 55px;
-      margin-bottom: 10px;
-    }
-
-    .showcase p {
-      font-size: 20px;
-    }
-
-    section {
-      padding: 20px;
-      margin: 20px 0;
-      background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
+    h1 {
       color: #35424a;
       border-bottom: 2px solid #e8491d;
       padding-bottom: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    th, td {
-      padding: 12px;
-      border: 1px solid #ccc;
-    }
-
-    th {
-      background-color: #e8491d;
-      color: #fff;
-      text-align: left;
-    }
-
-    tr:hover {
-      background-color: #f9f9f9;
+    .table th, .table td {
+      vertical-align: middle;
     }
 
     footer {
-      background: #35424a;
-      color: #ffffff;
+      background-color: #35424a;
+      color: #fff;
+      padding: 20px 0;
       text-align: center;
-      padding: 20px;
       margin-top: 40px;
+    }
+
+    a {
+      color: #e8491d;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" style="background-color: #35424a;">
     <div class="container">
-      <div id="branding">
-        <h1>Angel Library Portal</h1>
-      </div>
-      <nav>
-        <ul>
+      <a class="navbar-brand" href="index.html">Angel Library Portal</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon bg-light rounded"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="music.html">Music Recommendation</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
         </ul>
-      </nav>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <div class="showcase">
-    <h1>About Angel Library Portal</h1>
-    <p>Your retro digital library companion 📚✨</p>
-  </div>
-
+  <!-- About Content -->
   <div class="container">
-    <section>
-      <h2>About Me</h2>
-      <p>Hello! I'm Angelika Putri B. Hutasoit, the creator of Angel Library Portal — a digital space made with love for knowledge, books, and classic aesthetics. This portal is more than a project, it's a vision to bring information closer to everyone in a fun and nostalgic way. 💖</p>
-    </section>
+    <h1>About Me</h1>
+    <p>Hello! My name is <strong>Angelika Putri B. Hutasoit</strong>. Welcome to <em>Angel Library Portal</em> — a personal digital space dedicated to literature, music, and creativity. This site is designed to help you discover new reads, enjoy good tunes, and stay informed about upcoming events or library tools. 😊📚🎵</p>
 
-    <section>
-      <h2>Contact Information</h2>
-      <table>
-        <tr>
-          <th>Name</th>
-          <td>Angelika Putri B. Hutasoit</td>
-        </tr>
-        <tr>
-          <th>Email</th>
-          <td><a href="mailto:angelikaputri934@gmail.com">angelikaputri934@gmail.com</a></td>
-        </tr>
-        <tr>
-          <th>Instagram</th>
-          <td><a href="https://www.instagram.com/a.ngelikaputri?igsh=MW9uYTd5bDEwcGd3aw%3D%3D&utm_source=qr" target="_blank">@a.ngelikaputri</a></td>
-        </tr>
-        <tr>
-          <th>LinkedIn</th>
-          <td><a href="https://www.linkedin.com/in/angelika-putri-b-hutasoit-0b2820369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Angelika Putri B. Hutasoit</a></td>
-        </tr>
+    <h2 class="mt-5">Personal Information</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Field</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>Angelika Putri B. Hutasoit</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><a href="mailto:angelikaputri934@gmail.com">angelikaputri934@gmail.com</a></td>
+          </tr>
+          <tr>
+            <td>Instagram</td>
+            <td><a href="https://www.instagram.com/a.ngelikaputri?igsh=MW9uYTd5bDEwcGd3aw%3D%3D&utm_source=qr" target="_blank">@a.ngelikaputri</a></td>
+          </tr>
+          <tr>
+            <td>LinkedIn</td>
+            <td><a href="https://www.linkedin.com/in/angelika-putri-b-hutasoit-0b2820369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">LinkedIn Profile</a></td>
+          </tr>
+        </tbody>
       </table>
-    </section>
+    </div>
   </div>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Angel Library Portal by Angelika. All rights reserved.</p>
+    <p>&copy; 2025 Angel Library Portal. Created with ❤️ by Angelika Hutasoit.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
