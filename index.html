@@ -1,191 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angelika Hutasoit - LibrAngel</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angelika Hutasoit - LibrAngel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #c9e4f1, #f2f2fa);
+      margin: 0;
+      padding: 0;
+    }
 
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 0 20px;
-        }
+    header {
+      background-color: #4A90E2;
+      color: #ffffff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 1.8rem;
+    }
 
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e8491d 3px solid;
-        }
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        header a {
-            color: #ffffff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
+    .carousel-container {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
 
-        header ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            float: right;
-            margin-top: 25px;
-        }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding: 1rem;
+      justify-content: center;
+    }
 
-        header li {
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
 
-        header #branding {
-            float: left;
-        }
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 250px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      scroll-snap-align: center;
+      padding: 1rem;
+    }
 
-        header #branding h1 {
-            margin: 0;
-            font-size: 24px;
-        }
+    .event-container {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 1rem;
+    }
 
-        .showcase {
-            min-height: 400px;
-            background: url('https://via.placeholder.com/1500x400?text=Library+Showcase+Animation') no-repeat 0 -400px;
-            background-position: center center;
-            background-size: cover;
-            text-align: center;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 2s ease-in-out;
-        }
+    .event-item {
+      flex: 0 0 auto;
+      width: 250px;
+      background: #d4eaf7;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    .calculator {
+      margin-top: 2rem;
+      background: #ffffff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
 
-        .showcase h1 {
-            font-size: 55px;
-            margin-bottom: 10px;
-        }
+    .cookie-popup {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+      display: none;
+    }
 
-        .showcase p {
-            font-size: 20px;
-        }
+    .cookie-popup button {
+      background: #4A90E2;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-        section {
-            padding: 20px;
-            margin: 20px 0;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+    @media (max-width: 768px) {
+      .carousel-item, .event-item {
+        width: 80%;
+      }
 
-        h2 {
-            color: #35424a;
-            border-bottom: 2px solid #e8491d;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        .book, .event {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            background: #f9f9f9;
-        }
-
-        .usu-library-link {
-            display: inline-block;
-            background-color: #e8491d;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .usu-library-link:hover {
-            background-color: #35424a;
-        }
-
-        /* Calculator Styles */
-        .calculator {
-            width: 300px;
-            margin: 20px auto;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        .calculator input[type="text"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            font-size: 18px;
-            text-align: right;
-        }
-
-        .calculator .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 5px;
-        }
-
-        .calculator button {
-            padding: 15px;
-            font-size: 16px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            background-color: #e0e0e0;
-        }
-
-        .calculator button.operator {
-            background-color: #f0ad4e;
-            color: white;
-        }
-
-        .calculator button.equal {
-            background-color: #5cb85c;
-            color: white;
-            grid-column: span 2;
-        }
-        
-        .calculator button.clear {
-            background-color: #d9534f;
-            color: white;
-        }
-
-        footer {
-            padding: 20px;
-            margin-top: 20px;
-            color: #ffffff;
-            background-color: #35424a;
-            text-align: center;
-        }
-    </style>
+      .event-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
+      <body>
     <header>
         <div class="container">
             <div id="branding">
@@ -197,7 +125,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="registration.html">Registration</a></li>
-                    <li><a href="music.html">Music Recc</a></li>
+                    <li><a href="music.html">Music</a></li>
                 </ul>
             </nav>
         </div>
@@ -214,83 +142,92 @@
         <section id="books">
             <h2>Publicly Accessible Books</h2>
             <div class="book">
-                 <div id="carouselBuku" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 text-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" class="img-fluid rounded" alt="Laskar Pelangi">
-                            <h5 class="mt-2 text-white">Laskar Pelangi</h5>
-                            <p>Genre: Fiksi, Inspiratif</p>
-                            <a href="https://wongbagoes.files.wordpress.com/2008/04/laskar-pelangi.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" class="img-fluid rounded" alt="Bumi Manusia">
-                            <h5 class="mt-2 text-white">Bumi Manusia</h5>
-                            <p>Genre: Fiksi Sejarah</p>
-                            <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/id/8/89/Sang_Pemimpi_sampul.jpg" class="img-fluid rounded" alt="Sang Pemimpi">
-                            <h5 class="mt-2 text-white">Sang Pemimpi</h5>
-                            <p>Genre: Fiksi, Remaja</p>
-                            <a href="https://kalteng.kemenag.go.id/file/majalah/1613240702216.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 text-center">
-                            <img src="https://images.tokopedia.net/img/cache/700/product-1/2018/9/25/11999564/11999564_79f965ce-eaf6-4aeb-9ef6-6ee18f364b33_600_890.jpg" class="img-fluid rounded" alt="Laut Bercerita">
-                            <h5 class="mt-2 text-white">Laut Bercerita</h5>
-                            <p>Genre: Fiksi Sosial</p>
-                            <a href="https://lib.atim.ac.id/uploaded_files/temporary/DigitalCollection/MTJkZDc3OWFlNzI1NTY0ZGM0NzJhYTQ1ZWRjNDQ5YzRiNWI1NjIxYg==.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/PULANG.jpg" class="img-fluid rounded" alt="Pulang">
-                            <h5 class="mt-2 text-white">Pulang</h5>
-                            <p>Genre: Fiksi Sejarah</p>
-                            <a href="https://pustakapidiejaya.id/uploaded_files/temporary/DigitalCollection/MjEyYzg1NzBhNGZiMjQ2ZGZmMTk1MDRjYjU2ZTMzMTJiYTVjMjY5NA==.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-                        </div>
-                        <div class="col-md-4 text-center">
-                             </div>
-                    </div>
-                </div>
-            </div>
-                     <!-- Navigasi -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBuku" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselBuku" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+                <div class="container my-5">
+  <h2 class="text-center text-light mb-4">Rekomendasi Buku</h2>
+  <div id="carouselBuku" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <div class="text-center bg-dark bg-opacity-50 p-3 rounded" style="width: 240px;">
+            <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" class="img-fluid rounded" alt="Laskar Pelangi">
+            <h5 class="mt-2 text-white">Laskar Pelangi</h5>
+            <p class="text-white">Genre: Fiksi, Inspiratif</p>
+            <a href="https://wongbagoes.files.wordpress.com/2008/04/laskar-pelangi.pdf" target="_blank" class="btn btn-sm btn-light">Baca PDF</a>
+          </div>
+          <div class="text-center bg-dark bg-opacity-50 p-3 rounded" style="width: 240px;">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" class="img-fluid rounded" alt="Bumi Manusia">
+            <h5 class="mt-2 text-white">Bumi Manusia</h5>
+            <p class="text-white">Genre: Fiksi Sejarah</p>
+            <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank" class="btn btn-sm btn-light">Baca PDF</a>
+          </div>
+          <div class="text-center bg-dark bg-opacity-50 p-3 rounded" style="width: 240px;">
+            <img src="https://upload.wikimedia.org/wikipedia/id/8/89/Sang_Pemimpi_sampul.jpg" class="img-fluid rounded" alt="Sang Pemimpi">
+            <h5 class="mt-2 text-white">Sang Pemimpi</h5>
+            <p class="text-white">Genre: Fiksi, Remaja</p>
+            <a href="https://kalteng.kemenag.go.id/file/majalah/1613240702216.pdf" target="_blank" class="btn btn-sm btn-light">Baca PDF</a>
+          </div>
         </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <div class="text-center bg-dark bg-opacity-50 p-3 rounded" style="width: 240px;">
+            <img src="https://images.tokopedia.net/img/cache/700/product-1/2018/9/25/11999564/11999564_79f965ce-eaf6-4aeb-9ef6-6ee18f364b33_600_890.jpg" class="img-fluid rounded" alt="Laut Bercerita">
+            <h5 class="mt-2 text-white">Laut Bercerita</h5>
+            <p class="text-white">Genre: Fiksi Sosial</p>
+            <a href="https://lib.atim.ac.id/uploaded_files/temporary/DigitalCollection/MTJkZDc3OWFlNzI1NTY0ZGM0NzJhYTQ1ZWRjNDQ5YzRiNWI1NjIxYg==.pdf" target="_blank" class="btn btn-sm btn-light">Baca PDF</a>
+          </div>
+          <div class="text-center bg-dark bg-opacity-50 p-3 rounded" style="width: 240px;">
+            <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/PULANG.jpg" class="img-fluid rounded" alt="Pulang">
+            <h5 class="mt-2 text-white">Pulang</h5>
+            <p class="text-white">Genre: Fiksi Sejarah</p>
+            <a href="https://pustakapidiejaya.id/uploaded_files/temporary/DigitalCollection/MjEyYzg1NzBhNGZiMjQ2ZGZmMTk1MDRjYjU2ZTMzMTJiYTVjMjY5NA==.pdf" target="_blank" class="btn btn-sm btn-light">Baca PDF</a>
+          </div>
+          <div class="text-center bg-dark bg-opacity-50 p-3 rounded" style="width: 240px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Soekarno_1966.jpg" class="img-fluid rounded" alt="Biografi Soekarno">
+            <h5 class="mt-2 text-white">Biografi Soekarno</h5>
+            <p class="text-white">Genre: Biografi, Sejarah</p>
+            <a href="https://sites.google.com/smpn1samarinda.sch.id/perpustakaan-smpn1samarinda/buku-umum/buku-non-fiksi" target="_blank" class="btn btn-sm btn-light">Baca PDF</a>
+          </div>
+        </div>
+      </div>
     </div>
 
-             <a href="https://library.usu.ac.id/" target="_blank" class="usu-library-link">Visit USU Library</a>
+    <!-- Navigasi Carousel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselBuku" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselBuku" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+                <a href="https://library.usu.ac.id/" target="_blank" class="usu-library-link">Visit USU Library</a>
         </section>
 
-        <section id="events">
+<section id="events">
             <h2>Upcoming Library Events</h2>
             <div class="event">
-                   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYbqgX3UUEFLTdxZ48i1_izwvh170AptYbQ&s" alt="Pameran Buku">
-            <a href="https://www.instagram.com/p/DDY0CmtvX1X/?utm_source=ig_web_copy_link" target="_blank">Pameran Buku</a>
-        </div>
-        <div class="event-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkmXyGOpNNENgcoLsalQcAhFEugXxDNUksA&s" alt="Seminar Nasional">
-            <a href="https://www.instagram.com/p/DJBKaXGyffS/?utm_source=ig_web_copy_link" target="_blank">Seminar Nasional</a>
-        </div>
-        <div class="event-item">
-            <img src="https://doktor.fst.unair.ac.id/wp-content/uploads/sites/21/2025/04/workshop_puapt-ha-2025.jpeg" alt="Workshop">
-            <a href="https://www.instagram.com/p/DJNw9UOzYNc/?igsh=aXB3emxybjQzNXY2" target="_blank">Workshop</a>
-        </div>
+                <div class="container my-5">
+  <h2 class="text-center text-light mb-4">Acara Perpustakaan</h2>
+  <div class="d-flex flex-wrap justify-content-center gap-4">
+    <div class="text-center bg-dark bg-opacity-50 p-3 rounded" style="width: 240px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYbqgX3UUEFLTdxZ48i1_izwvh170AptYbQ&s" class="img-fluid rounded mb-2" alt="Pameran Buku">
+      <a href="https://www.instagram.com/p/DDY0CmtvX1X/?utm_source=ig_web_copy_link" target="_blank" class="btn btn-sm btn-light">Pameran Buku</a>
     </div>
-
-
-        <section id="calculator-section">
+    <div class="text-center bg-dark bg-opacity-50 p-3 rounded" style="width: 240px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkmXyGOpNNENgcoLsalQcAhFEugXxDNUksA&s" class="img-fluid rounded mb-2" alt="Seminar Nasional">
+      <a href="https://www.instagram.com/p/DJBKaXGyffS/?utm_source=ig_web_copy_link" target="_blank" class="btn btn-sm btn-light">Seminar Nasional</a>
+    </div>
+    <div class="text-center bg-dark bg-opacity-50 p-3 rounded" style="width: 240px;">
+      <img src="https://doktor.fst.unair.ac.id/wp-content/uploads/sites/21/2025/04/workshop_puapt-ha-2025.jpeg" class="img-fluid rounded mb-2" alt="Workshop">
+      <a href="https://www.instagram.com/p/DJNw9UOzYNc/?igsh=aXB3emxybjQzNXY2" target="_blank" class="btn btn-sm btn-light">Workshop</a>
+    </div>
+  </div>
+</div>
+                 <section id="calculator-section">
             <h2>Simple Calculator</h2>
             <div class="calculator">
                 <input type="text" id="calc-display" readonly>
@@ -362,31 +299,6 @@
             }
         }
     </script>
-     <script>
-        function acceptCookies() {
-            localStorage.setItem("cookieAccepted", "true");
-            document.getElementById("cookiePopup").style.display = "none";
-        }
-
-        window.onload = function() {
-            if (!localStorage.getItem("cookieAccepted")) {
-                document.getElementById("cookiePopup").style.display = "block";
-            }
-        };
-    </script>
-
-    <!-- Cookie Consent Pop-Up -->
-    <div id="cookiePopup" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-         background-color: #3c2f1a; color: #fff; padding: 30px; border-radius: 12px; z-index: 9999;
-         max-width: 90%; width: 400px; text-align: center; display: none; box-shadow: 0 0 15px rgba(0,0,0,0.3);">
-        <h5>🍪 Cookie Consent</h5>
-        <p style="margin: 15px 0;">Kami menggunakan cookie untuk meningkatkan pengalaman kamu di situs ini. Lanjutkan jika kamu setuju. 😊</p>
-        <button onclick="acceptCookies()" style="margin-top: 10px; background-color: #d3b17d; color: #3c2f1a; font-weight: bold;
-            border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
-            Oke, Saya Setuju
-        </button>
-    </div>
-
 
 </body>
 </html>
