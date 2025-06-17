@@ -1,123 +1,189 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami - LiberAngel</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your main styles.css -->
-    <style>
-        /* Specific styles for about.html if needed, otherwise rely on styles.css */
-        .about-section {
-            padding: 60px 0;
-            text-align: center;
-        }
-        .about-section h1 {
-            margin-bottom: 20px;
-            font-size: 2.5rem;
-        }
-        .about-section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto 20px auto;
-        }
-        .team-section {
-            padding: 40px 0;
-            text-align: center;
-        }
-        .team-member {
-            margin-bottom: 30px;
-        }
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid #5e4b36; /* Theme color for border */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Angel Library Portal</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+      padding: 0 20px;
+    }
+
+    header {
+      background: #35424a;
+      color: #ffffff;
+      padding-top: 30px;
+      min-height: 70px;
+      border-bottom: #e8491d 3px solid;
+    }
+
+    header ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      float: right;
+      margin-top: 25px;
+    }
+
+    header li {
+      display: inline;
+      padding: 0 20px;
+    }
+
+    header a {
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    header #branding {
+      float: left;
+    }
+
+    header #branding h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .showcase {
+      min-height: 400px;
+      background: url('https://via.placeholder.com/1500x400?text=Library+Showcase+Animation') no-repeat center center;
+      background-size: cover;
+      text-align: center;
+      color: #4B0082;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .showcase h1 {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .showcase p {
+      font-size: 20px;
+    }
+
+    section {
+      padding: 20px;
+      margin: 20px 0;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #35424a;
+      border-bottom: 2px solid #e8491d;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #e8491d;
+      color: #fff;
+      text-align: left;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    footer {
+      background: #35424a;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-        <div class="loading-content">
-            <img src="public/logo.png" alt="Loading Logo" class="loading-logo">
-            <p class="loading-text">Memuat Halaman...</p>
-        </div>
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1>Angel Library Portal</h1>
+      </div>
+      <nav>
+        <ul>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="music.html">Music Recommendation</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark animated-element">
-        <div class="container navbar-container">
-            <a class="navbar-brand" href="index.html">LiberAngel</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">Tentang Kami</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
-                    <li class="nav-item"><a class="nav-link" href="music.html">Musik</a></li>
-                    <li class="nav-item"><a class="nav-link" href="registration.html">Registrasi</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <div class="showcase">
+    <h1>About Angel Library Portal</h1>
+    <p>Your retro digital library companion 📚✨</p>
+  </div>
 
-    <!-- About Section -->
-    <section class="container about-section animated-element">
-        <h1>Tentang LiberAngel</h1>
-        <p>
-            LiberAngel adalah sebuah platform perpustakaan digital yang didedikasikan untuk menyediakan akses mudah dan luas ke berbagai koleksi buku dan sumber daya pengetahuan. Kami percaya bahwa membaca adalah jendela dunia, dan teknologi dapat menjadi jembatan untuk menghubungkan pembaca dengan lautan ilmu pengetahuan.
-        </p>
-        <p>
-               <!-- Tabel Profil -->
-    <div id="profile" style="display: none;">
-      <table class="table mt-4">
+  <div class="container">
+    <section>
+      <h2>About Me</h2>
+      <p>Hello! I'm Angelika Putri B. Hutasoit, the creator of Angel Library Portal — a digital space made with love for knowledge, books, and classic aesthetics. This portal is more than a project, it's a vision to bring information closer to everyone in a fun and nostalgic way. 💖</p>
+    </section>
+
+    <section>
+      <h2>Contact Information</h2>
+      <table>
         <tr>
-          <th>Informasi</th>
-          <th>Detail</th>
-        </tr>
-        <tr>
-          <td>Nama</td>
+          <th>Name</th>
           <td>Angelika Putri B. Hutasoit</td>
         </tr>
         <tr>
-          <td>Email</td>
-          <td>angelikaputri934@gmail.com</td>
+          <th>Email</th>
+          <td><a href="mailto:angelikaputri934@gmail.com">angelikaputri934@gmail.com</a></td>
         </tr>
         <tr>
-          <td>Hobi</td>
-          <td>Membaca, Menonton Film dan Mendengar Musik</td>
+          <th>Instagram</th>
+          <td><a href="https://www.instagram.com/a.ngelikaputri?igsh=MW9uYTd5bDEwcGd3aw%3D%3D&utm_source=qr" target="_blank">@a.ngelikaputri</a></td>
         </tr>
         <tr>
-          <td>Instagram</td>
-          <td><a href="https://instagram.com/a.ngelikaputri" target="_blank">@a.ngelikaputri</a></td>
+          <th>LinkedIn</th>
+          <td><a href="https://www.linkedin.com/in/angelika-putri-b-hutasoit-0b2820369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Angelika Putri B. Hutasoit</a></td>
         </tr>
       </table>
-    </div>
-  </div>
-    <!-- Team Section -->
-    <section class="container team-section animated-element">
-        <h2>Tim Kami</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-4 team-member">
-                <img src="https://source.unsplash.com/150x150/?person,developer" alt="Angelika Hutasoit">
-                <h4>Angelika Hutasoit</h4>
-                <p>Founder & Lead Developer</p>
-                <p>"Saya percaya bahwa setiap orang berhak mendapatkan akses ke pengetahuan. LiberAngel adalah wujud dari mimpi saya untuk membuat membaca lebih menyenangkan dan mudah diakses oleh semua kalangan."</p>
-            </div>
-            <!-- Add more team members if needed -->
-        </div>
     </section>
+  </div>
 
-    <!-- Footer -->
-    <footer class="py-4 animated-element">
-        <p>&copy; 2024 LiberAngel. Dibuat dengan ❤️ oleh Angelika Hutasoit.</p>
-        <p>Kunjungi kami di <a href="https://github.com/Angelikahutasoit" target="_blank">GitHub</a></p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Angel Library Portal by Angelika. All rights reserved.</p>
+  </footer>
 </body>
 </html>
