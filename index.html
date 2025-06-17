@@ -30,7 +30,7 @@
         }
 
         header a {
-            color: #ffffff;
+            color:#6A5ACD ;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
@@ -197,7 +197,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="registration.html">Registration</a></li>
-                    <li><a href="music.html">Music Recc</a></li>
+                    <li><a href="music.html">Music Recomendation</a></li>
                 </ul>
             </nav>
         </div>
@@ -207,38 +207,96 @@
         <div class="container">
             <h1>Welcome to Your Personal Library Hub</h1>
             <p>Discover books, events, and more. Your gateway to knowledge and entertainment.</p>
+              <!-- Rekomendasi Buku - Carousel 3 Buku per Slide -->
+    <div class="container my-5">
+        <div id="carouselBuku" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" class="img-fluid rounded" alt="Laskar Pelangi">
+                            <h5 class="mt-2 text-white">Laskar Pelangi</h5>
+                            <p>Genre: Fiksi, Inspiratif</p>
+                            <a href="https://wongbagoes.files.wordpress.com/2008/04/laskar-pelangi.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" class="img-fluid rounded" alt="Bumi Manusia">
+                            <h5 class="mt-2 text-white">Bumi Manusia</h5>
+                            <p>Genre: Fiksi Sejarah</p>
+                            <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/id/8/89/Sang_Pemimpi_sampul.jpg" class="img-fluid rounded" alt="Sang Pemimpi">
+                            <h5 class="mt-2 text-white">Sang Pemimpi</h5>
+                            <p>Genre: Fiksi, Remaja</p>
+                            <a href="https://kalteng.kemenag.go.id/file/majalah/1613240702216.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 text-center">
+                            <img src="https://images.tokopedia.net/img/cache/700/product-1/2018/9/25/11999564/11999564_79f965ce-eaf6-4aeb-9ef6-6ee18f364b33_600_890.jpg" class="img-fluid rounded" alt="Laut Bercerita">
+                            <h5 class="mt-2 text-white">Laut Bercerita</h5>
+                            <p>Genre: Fiksi Sosial</p>
+                            <a href="https://lib.atim.ac.id/uploaded_files/temporary/DigitalCollection/MTJkZDc3OWFlNzI1NTY0ZGM0NzJhYTQ1ZWRjNDQ5YzRiNWI1NjIxYg==.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/PULANG.jpg" class="img-fluid rounded" alt="Pulang">
+                            <h5 class="mt-2 text-white">Pulang</h5>
+                            <p>Genre: Fiksi Sejarah</p>
+                            <a href="https://pustakapidiejaya.id/uploaded_files/temporary/DigitalCollection/MjEyYzg1NzBhNGZiMjQ2ZGZmMTk1MDRjYjU2ZTMzMTJiYTVjMjY5NA==.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Soekarno_1966.jpg" class="img-fluid rounded" alt="Biografi Soekarno">
+                            <h5 class="mt-2 text-white">Biografi Soekarno</h5>
+                            <p>Genre: Biografi, Sejarah</p>
+                            <a href="https://sites.google.com/smpn1samarinda.sch.id/perpustakaan-smpn1samarinda/buku-umum/buku-non-fiksi" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigasi -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBuku" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselBuku" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
     </div>
+             </section>
 
-    <div class="container">
-        <section id="books">
-            <h2>Publicly Accessible Books</h2>
-            <div class="book">
-                <h3>The Great Gatsby by F. Scott Fitzgerald</h3>
-                <p>A classic novel exploring themes of wealth, love, and the American Dream. Available in various digital formats.</p>
-                <a href="#" class="btn">Access Book</a>
-            </div>
-            <div class="book">
-                <h3>1984 by George Orwell</h3>
-                <p>A dystopian novel set in a totalitarian society, a powerful warning against government overreach. Free e-book versions available.</p>
-                <a href="#" class="btn">Access Book</a>
-            </div>
-             <a href="https://library.usu.ac.id/" target="_blank" class="usu-library-link">Visit USU Library</a>
-        </section>
+
+        </div>
+    </div>
 
         <section id="events">
             <h2>Upcoming Library Events</h2>
             <div class="event">
-                <h3>Author Meet & Greet: Jane Doe</h3>
-                <p><strong>Date:</strong> October 25, 2025 | <strong>Time:</strong> 2:00 PM - 4:00 PM</p>
-                <p>Join us for an exciting session with bestselling author Jane Doe, discussing her latest novel.</p>
-            </div>
-            <div class="event">
-                <h3>Summer Reading Challenge Kick-off</h3>
-                <p><strong>Date:</strong> June 1, 2025 | <strong>Time:</strong> 10:00 AM</p>
-                <p>Fun activities and sign-ups for our annual summer reading challenge for all ages.</p>
-            </div>
-        </section>
+                   <!-- Event Perpustakaan -->
+    <div class="event-title">
+        <h1>Event Perpustakaan Terbaru</h1>
+    </div>
+    <div class="event-container">
+        <div class="event-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYbqgX3UUEFLTdxZ48i1_izwvh170AptYbQ&s" alt="Pameran Buku">
+            <a href="https://www.instagram.com/p/DDY0CmtvX1X/?utm_source=ig_web_copy_link" target="_blank">Pameran Buku</a>
+        </div>
+        <div class="event-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkmXyGOpNNENgcoLsalQcAhFEugXxDNUksA&s" alt="Seminar Nasional">
+            <a href="https://www.instagram.com/p/DJBKaXGyffS/?utm_source=ig_web_copy_link" target="_blank">Seminar Nasional</a>
+        </div>
+        <div class="event-item">
+            <img src="https://doktor.fst.unair.ac.id/wp-content/uploads/sites/21/2025/04/workshop_puapt-ha-2025.jpeg" alt="Workshop">
+            <a href="https://www.instagram.com/p/DJNw9UOzYNc/?igsh=aXB3emxybjQzNXY2" target="_blank">Workshop</a>
+        </div>
+    </div>
+                 </section>
 
         <section id="calculator-section">
             <h2>Simple Calculator</h2>
