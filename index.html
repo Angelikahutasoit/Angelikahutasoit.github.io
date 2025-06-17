@@ -101,88 +101,6 @@
             margin-bottom: 20px;
         }
 
-         .info-card {
-            background-color: #ffffff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .info-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .info-card-body {
-            padding: 20px;
-        }
-
-        .info-card-body h3 {
-            font-size: 1.2rem;
-            color: #333;
-        }
-
-        .info-card-body p {
-            color: #777;
-        }
-
-        .info-card-body .btn {
-            background-color: #5e4b36;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .info-card-body .btn:hover {
-            background-color: #3c2f1a;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            color: #f5f1e6;
-            font-size: 1rem;
-        }
-
-        footer a {
-            color: #d3b17d;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #f0e6d2;
-        }
-
-        .link-container {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .link-container a {
-            font-size: 1.2rem;
-            color: #f5f1e6;
-            text-decoration: none;
-            padding: 10px 25px;
-            background-color: #5e4b36;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
-            display: inline-block;
-        }
-
-        .link-container a:hover {
-            background-color: #3c2f1a;
-            color: #f5f1e6;
-        }
-
         .event-container {
             display: flex;
             justify-content: center;
@@ -323,69 +241,90 @@
             </nav>
         </div>
     </header>
+     <div class="showcase">
+        <div class="container">
+            <h1>Welcome to Angel Library Portal</h1>
+            <p>Discover books, events, and more. Your gateway to knowledge and entertainment.</p>
+        </div>
+    </div>
 
-    
-           
-              <!-- Rekomendasi Buku - Carousel 3 Buku per Slide -->
-     <div class="info-container">
+   <div class="container my-5">
+  <h2 class="text-center text-light mb-4">Acara Perpustakaan</h2>
+  <div class="d-flex flex-wrap justify-content-center gap-4">
+    <div class="text-center bg-dark bg-opacity-50 p-3 rounded" style="width: 240px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvYbqgX3UUEFLTdxZ48i1_izwvh170AptYbQ&s" class="img-fluid rounded mb-2" alt="Pameran Buku">
+      <a href="https://www.instagram.com/p/DDY0CmtvX1X/?utm_source=ig_web_copy_link" target="_blank" class="btn btn-sm btn-light">Pameran Buku</a>
+    </div>
+    <div class="text-center bg-dark bg-opacity-50 p-3 rounded" style="width: 240px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkmXyGOpNNENgcoLsalQcAhFEugXxDNUksA&s" class="img-fluid rounded mb-2" alt="Seminar Nasional">
+      <a href="https://www.instagram.com/p/DJBKaXGyffS/?utm_source=ig_web_copy_link" target="_blank" class="btn btn-sm btn-light">Seminar Nasional</a>
+    </div>
+    <div class="text-center bg-dark bg-opacity-50 p-3 rounded" style="width: 240px;">
+      <img src="https://doktor.fst.unair.ac.id/wp-content/uploads/sites/21/2025/04/workshop_puapt-ha-2025.jpeg" class="img-fluid rounded mb-2" alt="Workshop">
+      <a href="https://www.instagram.com/p/DJNw9UOzYNc/?igsh=aXB3emxybjQzNXY2" target="_blank" class="btn btn-sm btn-light">Workshop</a>
+    </div>
+  </div>
+</div>
+
     <div class="container my-5">
-        <h2 class="text-center text-white mb-4">Discover Our Books</h2>
-         <div id="carouselBuku" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 text-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" class="img-fluid rounded" alt="Laskar Pelangi">
-                            <h5 class="mt-2 text-white">Laskar Pelangi</h5>
-                            <p>Genre: Fiksi, Inspiratif</p>
-                            <a href="https://wongbagoes.files.wordpress.com/2008/04/laskar-pelangi.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" class="img-fluid rounded" alt="Bumi Manusia">
-                            <h5 class="mt-2 text-white">Bumi Manusia</h5>
-                            <p>Genre: Fiksi Sejarah</p>
-                            <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/id/8/89/Sang_Pemimpi_sampul.jpg" class="img-fluid rounded" alt="Sang Pemimpi">
-                            <h5 class="mt-2 text-white">Sang Pemimpi</h5>
-                            <p>Genre: Fiksi, Remaja</p>
-                            <a href="https://kalteng.kemenag.go.id/file/majalah/1613240702216.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-                        </div>
-                    </div>
-                </div>
+  <h2 class="text-center mb-4" style="color: #35424a;">Rekomendasi Buku</h2>
+  <div id="carouselBuku" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
 
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 text-center">
-                            <img src="https://images.tokopedia.net/img/cache/700/product-1/2018/9/25/11999564/11999564_79f965ce-eaf6-4aeb-9ef6-6ee18f364b33_600_890.jpg" class="img-fluid rounded" alt="Laut Bercerita">
-                            <h5 class="mt-2 text-white">Laut Bercerita</h5>
-                            <p>Genre: Fiksi Sosial</p>
-                            <a href="https://lib.atim.ac.id/uploaded_files/temporary/DigitalCollection/MTJkZDc3OWFlNzI1NTY0ZGM0NzJhYTQ1ZWRjNDQ5YzRiNWI1NjIxYg==.pdf" target="_blank" class="btn btn-sm btn-light">📖 Baca PDF</a>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/PULANG.jpg" class="img-fluid rounded" alt="Pulang">
-                            <h5 class="mt-2 text-white">Pulang</h5>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Navigasi -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBuku" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselBuku" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="row justify-content-center">
+          <div class="col-md-4 text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" class="img-fluid rounded" style="height: 240px; object-fit: cover;" alt="Laskar Pelangi">
+            <h5 class="mt-2" style="color: #35424a;">Laskar Pelangi</h5>
+            <a href="https://wongbagoes.files.wordpress.com/2008/04/laskar-pelangi.pdf" target="_blank" class="btn btn-sm btn-light">Baca PDF</a>
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" class="img-fluid rounded" style="height: 240px; object-fit: cover;" alt="Bumi Manusia">
+            <h5 class="mt-2" style="color: #35424a;">Bumi Manusia</h5>
+            <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank" class="btn btn-sm btn-light">Baca PDF</a>
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/id/8/89/Sang_Pemimpi_sampul.jpg" class="img-fluid rounded" style="height: 240px; object-fit: cover;" alt="Sang Pemimpi">
+            <h5 class="mt-2" style="color: #35424a;">Sang Pemimpi</h5>
+            <a href="https://kalteng.kemenag.go.id/file/majalah/1613240702216.pdf" target="_blank" class="btn btn-sm btn-light">Baca PDF</a>
+          </div>
         </div>
-    </div>
-             </section>
+      </div>
 
-
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="row justify-content-center">
+          <div class="col-md-4 text-center">
+            <img src="https://images.tokopedia.net/img/cache/700/product-1/2018/9/25/11999564/11999564_79f965ce-eaf6-4aeb-9ef6-6ee18f364b33_600_890.jpg" class="img-fluid rounded" style="height: 240px; object-fit: cover;" alt="Laut Bercerita">
+            <h5 class="mt-2" style="color: #35424a;">Laut Bercerita</h5>
+            <a href="https://lib.atim.ac.id/uploaded_files/temporary/DigitalCollection/MTJkZDc3OWFlNzI1NTY0ZGM0NzJhYTQ1ZWRjNDQ5YzRiNWI1NjIxYg==.pdf" target="_blank" class="btn btn-sm btn-light">Baca PDF</a>
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/PULANG.jpg" class="img-fluid rounded" style="height: 240px; object-fit: cover;" alt="Pulang">
+            <h5 class="mt-2" style="color: #35424a;">Pulang</h5>
+            <a href="https://pustakapidiejaya.id/uploaded_files/temporary/DigitalCollection/MjEyYzg1NzBhNGZiMjQ2ZGZmMTk1MDRjYjU2ZTMzMTJiYTVjMjY5NA==.pdf" target="_blank" class="btn btn-sm btn-light">Baca PDF</a>
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Soekarno_1966.jpg" class="img-fluid rounded" style="height: 240px; object-fit: cover;" alt="Biografi Soekarno">
+            <h5 class="mt-2" style="color: #35424a;">Biografi Soekarno</h5>
+            <a href="https://sites.google.com/smpn1samarinda.sch.id/perpustakaan-smpn1samarinda/buku-umum/buku-non-fiksi" target="_blank" class="btn btn-sm btn-light">Baca PDF</a>
+          </div>
         </div>
+      </div>
     </div>
+
+    <!-- Navigasi -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselBuku" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselBuku" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+     <a href="https://library.usu.ac.id/" target="_blank" class="usu-library-link">Visit USU Library</a>
+        </section>
 
         <section id="events">
             <h2>Upcoming Library Events</h2>
