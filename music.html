@@ -164,8 +164,8 @@
       <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="music.html">Music Recommendation</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link active" href="music.html">Music Recomendation</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
         </ul>
@@ -359,9 +359,72 @@
                 {title: "Sail", artist: "AWOLNATION", mood: "Electronic Rock"},
                 {title: "Little Talks", artist: "Of Monsters and Men", mood: "Indie"},
                 {title: "Home", artist: "Edward Sharpe", mood: "Folk"}
-            ]
+            energetic: [
+                    {title: "Electric Feel", artist: "MGMT", mood: "Psychedelic"},
+                    {title: "Midnight City", artist: "M83", mood: "Synthpop"},
+                    {title: "Around the World", artist: "Daft Punk", mood: "Electronic"}
+                ]
+            }
         };
 
+        // Fungsi rekomendasi musik
+        function getRecommendations() {
+            const genreButtons = document.querySelectorAll('.genre-btn');
+            let selectedGenre = "";
+            genreButtons.forEach(button => {
+                if (button.classList.contains("active")) {
+                    selectedGenre = button.getAttribute("data-genre");
+                }
+            });
+
+            const mood = document.getElementById("readingMood").value;
+            const bookTitle = document.getElementById("bookTitle").value.trim();
+
+            const recommendationBox = document.getElementById("recommendations");
+            const songList = document.getElementById("songList");
+            const textBox = document.getElementById("recommendationText");
+
+            songList.innerHTML = "";
+            textBox.textContent = "";
+
+            if (!selectedGenre || !mood) {
+                textBox.textContent = "Silakan pilih genre buku dan suasana membaca terlebih dahulu.";
+                recommendationBox.classList.add("show");
+                return;
+            }
+
+            const musicList = musicDatabase[selectedGenre]?.[mood] || [];
+            if (musicList.length === 0) {
+                textBox.textContent = Maaf, belum ada rekomendasi musik untuk genre "${selectedGenre}" dengan suasana "${mood}".;
+            } else {
+                textBox.textContent = Musik yang cocok untuk buku "${bookTitle || "yang sedang kamu baca"}" dengan suasana "${mood}":;
+                musicList.forEach(song => {
+                    const li = document.createElement("li");
+                    li.className = "song-item";
+                    li.innerHTML = `
+                        <span class="song-icon">🎧</span>
+                        <div>
+                            <strong>${song.title}</strong> - ${song.artist}
+                            <span class="mood-indicator">${song.mood}</span>
+                        </div>
+                        <a class="spotify-link" href="https://open.spotify.com/search/${encodeURIComponent(song.title + " " + song.artist)}" target="_blank">Spotify</a>
+                    `;
+                    songList.appendChild(li);
+                });
+            }
+
+            recommendationBox.classList.add("show");
+        }
+
+        // Highlight button saat diklik
+        document.querySelectorAll('.genre-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.genre-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+</body>
+  </html>
         // Event listeners untuk tombol genre
         document.querySelectorAll('.genre-btn').forEach(btn => {
             btn.addEventListener('click', function() {
