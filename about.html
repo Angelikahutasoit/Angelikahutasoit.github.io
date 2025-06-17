@@ -119,23 +119,5 @@
         <p>&copy; 2024 LiberAngel. Dibuat dengan ❤️ oleh Angelika Hutasoit.</p>
         <p>Kunjungi kami di <a href="https://github.com/Angelikahutasoit" target="_blank">GitHub</a></p>
     </footer>
-
-   
-
-        // Animation for elements
-        const animatedElements = document.querySelectorAll('.animated-element');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        animatedElements.forEach(el => {
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
